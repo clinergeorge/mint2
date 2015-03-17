@@ -1237,7 +1237,7 @@
     <ChartDimensionDataDef>
       <PseudoDef>
         <Name>Account1</Name>
-        <Type>NOT_PRESENT</Type>
+        <Type>PRESENT</Type>
       </PseudoDef>
       <Title></Title>
       <TotalString></TotalString>

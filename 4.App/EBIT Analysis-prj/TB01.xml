@@ -217,7 +217,7 @@
         <Label></Label>
         <Field>
           <Name>Amount</Name>
-          <Type>NOT_PRESENT</Type>
+          <Type>PRESENT</Type>
         </Field>
         <SortCriteria>
           <SortByState>1</SortByState>
@@ -368,7 +368,7 @@
         <Label></Label>
         <Field>
           <Name>Account1</Name>
-          <Type>NOT_PRESENT</Type>
+          <Type>PRESENT</Type>
         </Field>
         <SortCriteria>
           <SortByState>1</SortByState>

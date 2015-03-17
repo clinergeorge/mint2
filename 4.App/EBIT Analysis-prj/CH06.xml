@@ -2772,7 +2772,7 @@ Sum({&lt;Account1= {Headcount} &gt;} Value)))</v>
     <ChartDimensionDataDef>
       <PseudoDef>
         <Name>BU1</Name>
-        <Type>NOT_PRESENT</Type>
+        <Type>PRESENT</Type>
       </PseudoDef>
       <Title></Title>
       <TotalString></TotalString>
@@ -2955,7 +2955,7 @@ Sum({&lt;Account1= {Headcount} &gt;} Value)))</v>
     <ChartDimensionDataDef>
       <PseudoDef>
         <Name>BU2</Name>
-        <Type>NOT_PRESENT</Type>
+        <Type>PRESENT</Type>
       </PseudoDef>
       <Title></Title>
       <TotalString></TotalString>
@@ -3138,7 +3138,7 @@ Sum({&lt;Account1= {Headcount} &gt;} Value)))</v>
     <ChartDimensionDataDef>
       <PseudoDef>
         <Name>BU3</Name>
-        <Type>NOT_PRESENT</Type>
+        <Type>PRESENT</Type>
       </PseudoDef>
       <Title></Title>
       <TotalString></TotalString>
@@ -3321,7 +3321,7 @@ Sum({&lt;Account1= {Headcount} &gt;} Value)))</v>
     <ChartDimensionDataDef>
       <PseudoDef>
         <Name>BU4</Name>
-        <Type>NOT_PRESENT</Type>
+        <Type>PRESENT</Type>
       </PseudoDef>
       <Title></Title>
       <TotalString></TotalString>
@@ -3689,7 +3689,7 @@ Sum({&lt;Account1= {Headcount} &gt;} Value)))</v>
     <ChartDimensionDataDef>
       <PseudoDef>
         <Name>Scenario</Name>
-        <Type>NOT_PRESENT</Type>
+        <Type>PRESENT</Type>
       </PseudoDef>
       <Title></Title>
       <TotalString></TotalString>

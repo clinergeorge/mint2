@@ -1426,7 +1426,7 @@ RangeSum(Above(Sum({&lt;[Measure Version]={Final}, Scenario={Actual}, Account1={
     <ChartDimensionDataDef>
       <PseudoDef>
         <Name>FiscalMonthYear</Name>
-        <Type>NOT_PRESENT</Type>
+        <Type>PRESENT</Type>
       </PseudoDef>
       <Title></Title>
       <TotalString></TotalString>

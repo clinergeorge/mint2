@@ -1029,7 +1029,7 @@
     <ChartDimensionDataDef>
       <PseudoDef>
         <Name>FiscalYearQuarter</Name>
-        <Type>NOT_PRESENT</Type>
+        <Type>PRESENT</Type>
       </PseudoDef>
       <Title></Title>
       <TotalString></TotalString>

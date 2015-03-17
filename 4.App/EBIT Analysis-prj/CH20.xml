@@ -2959,7 +2959,7 @@ if(ValueList('Headcount', 'Margin', 'EBIT', 'Revenue', 'Total Costs') = 'Total C
     <ChartDimensionDataDef>
       <PseudoDef>
         <Name>Account2</Name>
-        <Type>NOT_PRESENT</Type>
+        <Type>PRESENT</Type>
       </PseudoDef>
       <Title></Title>
       <TotalString></TotalString>
@@ -3142,7 +3142,7 @@ if(ValueList('Headcount', 'Margin', 'EBIT', 'Revenue', 'Total Costs') = 'Total C
     <ChartDimensionDataDef>
       <PseudoDef>
         <Name>Account3</Name>
-        <Type>NOT_PRESENT</Type>
+        <Type>PRESENT</Type>
       </PseudoDef>
       <Title></Title>
       <TotalString></TotalString>
@@ -3325,7 +3325,7 @@ if(ValueList('Headcount', 'Margin', 'EBIT', 'Revenue', 'Total Costs') = 'Total C
     <ChartDimensionDataDef>
       <PseudoDef>
         <Name>Account4</Name>
-        <Type>NOT_PRESENT</Type>
+        <Type>PRESENT</Type>
       </PseudoDef>
       <Title></Title>
       <TotalString></TotalString>
@@ -3508,7 +3508,7 @@ if(ValueList('Headcount', 'Margin', 'EBIT', 'Revenue', 'Total Costs') = 'Total C
     <ChartDimensionDataDef>
       <PseudoDef>
         <Name>Account5</Name>
-        <Type>NOT_PRESENT</Type>
+        <Type>PRESENT</Type>
       </PseudoDef>
       <Title></Title>
       <TotalString></TotalString>
@@ -5464,7 +5464,6 @@ if(ValueList('Headcount', 'Margin', 'EBIT', 'Revenue', 'Total Costs') = 'Total C
   <TableProperties>
     <VerticalLabels>false</VerticalLabels>
     <ColWidths>
-      <int>300</int>
       <int>300</int>
       <int>300</int>
       <int>300</int>

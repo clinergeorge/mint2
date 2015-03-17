@@ -742,7 +742,7 @@ if(GetSelectedCount(FiscalYear)=1 and GetSelectedCount(FiscalQuarter)=1 and GetS
     <ChartDimensionDataDef>
       <PseudoDef>
         <Name>BU1</Name>
-        <Type>NOT_PRESENT</Type>
+        <Type>PRESENT</Type>
       </PseudoDef>
       <Title></Title>
       <TotalString></TotalString>
@@ -925,7 +925,7 @@ if(GetSelectedCount(FiscalYear)=1 and GetSelectedCount(FiscalQuarter)=1 and GetS
     <ChartDimensionDataDef>
       <PseudoDef>
         <Name>BU2</Name>
-        <Type>NOT_PRESENT</Type>
+        <Type>PRESENT</Type>
       </PseudoDef>
       <Title></Title>
       <TotalString></TotalString>
@@ -1108,7 +1108,7 @@ if(GetSelectedCount(FiscalYear)=1 and GetSelectedCount(FiscalQuarter)=1 and GetS
     <ChartDimensionDataDef>
       <PseudoDef>
         <Name>BU3</Name>
-        <Type>NOT_PRESENT</Type>
+        <Type>PRESENT</Type>
       </PseudoDef>
       <Title></Title>
       <TotalString></TotalString>
@@ -1291,7 +1291,7 @@ if(GetSelectedCount(FiscalYear)=1 and GetSelectedCount(FiscalQuarter)=1 and GetS
     <ChartDimensionDataDef>
       <PseudoDef>
         <Name>BU4</Name>
-        <Type>NOT_PRESENT</Type>
+        <Type>PRESENT</Type>
       </PseudoDef>
       <Title></Title>
       <TotalString></TotalString>

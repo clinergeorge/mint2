@@ -1423,7 +1423,7 @@
     <ChartDimensionDataDef>
       <PseudoDef>
         <Name>FiscalMonth</Name>
-        <Type>NOT_PRESENT</Type>
+        <Type>PRESENT</Type>
       </PseudoDef>
       <Title></Title>
       <TotalString></TotalString>

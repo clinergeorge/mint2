@@ -730,7 +730,7 @@
     <ChartDimensionDataDef>
       <PseudoDef>
         <Name>BU1</Name>
-        <Type>NOT_PRESENT</Type>
+        <Type>PRESENT</Type>
       </PseudoDef>
       <Title></Title>
       <TotalString></TotalString>
@@ -913,7 +913,7 @@
     <ChartDimensionDataDef>
       <PseudoDef>
         <Name>BU2</Name>
-        <Type>NOT_PRESENT</Type>
+        <Type>PRESENT</Type>
       </PseudoDef>
       <Title></Title>
       <TotalString></TotalString>
@@ -1096,7 +1096,7 @@
     <ChartDimensionDataDef>
       <PseudoDef>
         <Name>BU3</Name>
-        <Type>NOT_PRESENT</Type>
+        <Type>PRESENT</Type>
       </PseudoDef>
       <Title></Title>
       <TotalString></TotalString>
@@ -1279,7 +1279,7 @@
     <ChartDimensionDataDef>
       <PseudoDef>
         <Name>BU4</Name>
-        <Type>NOT_PRESENT</Type>
+        <Type>PRESENT</Type>
       </PseudoDef>
       <Title></Title>
       <TotalString></TotalString>
@@ -2797,7 +2797,6 @@
     <VerticalLabels>false</VerticalLabels>
     <ColWidths>
       <int>1053</int>
-      <int>300</int>
       <int>300</int>
       <int>300</int>
       <int>300</int>

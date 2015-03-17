@@ -1617,7 +1617,7 @@
     <ChartDimensionDataDef>
       <PseudoDef>
         <Name>Scenario</Name>
-        <Type>NOT_PRESENT</Type>
+        <Type>PRESENT</Type>
       </PseudoDef>
       <Title></Title>
       <TotalString></TotalString>

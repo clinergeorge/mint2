@@ -1,4 +1,4 @@
-﻿<!-- Last project change: 2015-03-16 18:07:56 (2015-03-17 01:07:56) -->
+﻿<!-- Last project change: 2015-03-16 21:35:54 (2015-03-17 04:35:54) -->
 <PrjQlikViewProject>
   <GLOBAL>
     <AllPropertiesFileName>AllProperties.xml</AllPropertiesFileName>
@@ -2878,23 +2878,6 @@
           <ZedLevel>0</ZedLevel>
         </PrjFrameParentDef>
         <PrjFrameParentDef>
-          <ObjectId>Document\LB17</ObjectId>
-          <Rect>
-            <Left>4872</Left>
-            <Top>72</Top>
-            <Width>450</Width>
-            <Height>900</Height>
-          </Rect>
-          <MinimizedRect>
-            <Left>0</Left>
-            <Top>0</Top>
-            <Width>297</Width>
-            <Height>102</Height>
-          </MinimizedRect>
-          <ShowMode>1</ShowMode>
-          <ZedLevel>0</ZedLevel>
-        </PrjFrameParentDef>
-        <PrjFrameParentDef>
           <ObjectId>Document\LB14</ObjectId>
           <Rect>
             <Left>2419</Left>
@@ -3016,8 +2999,8 @@
         <PrjFrameParentDef>
           <ObjectId>Document\LB142</ObjectId>
           <Rect>
-            <Left>2778</Left>
-            <Top>1472</Top>
+            <Left>2606</Left>
+            <Top>1584</Top>
             <Width>1166</Width>
             <Height>900</Height>
           </Rect>
