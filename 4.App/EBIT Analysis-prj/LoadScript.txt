@@ -1,0 +1,318 @@
+﻿///$tab Main
+SET ThousandSep=',';
+SET DecimalSep='.';
+SET MoneyThousandSep=',';
+SET MoneyDecimalSep='.';
+SET MoneyFormat='$#,##0.00;($#,##0.00)';
+SET TimeFormat='h:mm:ss TT';
+SET DateFormat='M/D/YYYY';
+SET TimestampFormat='M/D/YYYY h:mm:ss[.fff] TT';
+SET MonthNames='Jan;Feb;Mar;Apr;May;Jun;Jul;Aug;Sep;Oct;Nov;Dec';
+SET DayNames='Mon;Tue;Wed;Thu;Fri;Sat;Sun';
+
+///$tab Colors
+// Set Default Color scheme 
+_ColorField:
+LOAD
+
+RGB(217,217,217) as _cActiveCaption,
+RGB(244,244,244) as _cInactiveCaption,
+RGB(30,30,30) as _cCaptionText,
+RGB(118,118,118) as _cSubText,
+RGB(192,2,1) as _cTab,
+RGB(255,255,255) as _cTabText,
+RGB(255,255,255) as _cTabBackground,
+RGB(35,126,171) as _cButton,
+RGB(140,140,140) as _cColorMap1,
+RGB(136,189,230) as _cColorMap2,
+RGB(251,178,88) as _cColorMap3,
+RGB(144,205,151) as _cColorMap4,
+RGB(246,170,201) as _cColorMap5,
+RGB(191,165,84) as _cColorMap6,
+RGB(188,153,199) as _cColorMap7,
+RGB(237,221,70) as _cColorMap8,
+RGB(240,126,110) as _cColorMap9,
+ARGB(100,140,140,140) as _cColorMap10,
+ARGB(100,136,189,230) as _cColorMap11,
+ARGB(100,251,178,88) as _cColorMap12,
+ARGB(100,144,205,151) as _cColorMap13,
+ARGB(100,246,170,201) as _cColorMap14,
+ARGB(100,191,165,84) as _cColorMap15,
+ARGB(100,188,153,199) as _cColorMap16,
+ARGB(100,237,221,70) as _cColorMap17,
+ARGB(100,240,126,110) as _cColorMap18,
+RGB(77,77,77) as _cColorMapTotal,
+RGB(93,165,218) as _cColorMapOther,
+RGB(140,140,140) as _cLiteGrey,
+RGB(136,189,230) as _cLiteBlue,
+RGB(251,178,88) as _cLiteOrange,
+RGB(144,205,151) as _cLiteGreen,
+RGB(246,170,201) as _cLitePink,
+RGB(191,165,84) as _cLiteBrown,
+RGB(188,153,199) as _cLitePurple,
+RGB(237,221,70) as _cLiteYellow,
+RGB(240,126,110) as _cLiteRed,
+ARGB(100,140,140,140) as _cLiteGreyT,
+ARGB(100,136,189,230) as _cLiteBlueT,
+ARGB(100,251,178,88) as _cLiteOrangeT,
+ARGB(100,144,205,151) as _cLiteGreenT,
+ARGB(100,246,170,201) as _cLitePinkT,
+ARGB(100,191,165,84) as _cLiteBrownT,
+ARGB(100,188,153,199) as _cLitePurpleT,
+ARGB(100,237,221,70) as _cLiteYellowT,
+ARGB(100,240,126,110) as _cLiteRedT
+AUTOGENERATE 1;
+
+  
+///$tab Hackdata
+temp:
+CrossTable(Inputstring, Value, 2)
+LOAD *
+FROM
+[..\1.SourceData\FactTables\Hackdata.csv]
+(txt, codepage is 1252, embedded labels, delimiter is ',', msq, header is 11 lines);
+
+
+//to-do: refactor
+Fact:
+LOAD Text(BU)																										as BU_ID,
+     Text(Account) 																									as _accountid,
+     Inputstring, //uncomment for debugging
+     Value, //uncomment for debugging
+     if(Right(Subfield(Inputstring,'~',1),14) = '_BR_Exceptions', Value, Null()) 									as Exceptions,
+     if(Right(Subfield(Inputstring,'~',1),14) <> '_BR_Exceptions', Value, Null()) 									as Amount,
+     if(Left(Inputstring, 6) = 'Actual', 'Actual',
+     	if(Left(Inputstring, 6) = 'Budget', 'Budget', 'MMC')) 														as Scenario,
+     if(Right(Subfield(Inputstring,'~',1),14) = '_BR_Exceptions', 'Y', 'N') 										as [Exceptions Flag],
+     if(Wildmatch(Subfield(Inputstring,'~', 2), 'Final') = 1, 'Final', 
+     	if(Wildmatch(Subfield(Inputstring,'~', 2), 'HYR') = 1, 'Working',
+     	   if(Wildmatch(Subfield(Inputstring,'~', 2), 'MMC6') = 1, 'MMC6', Null()))) 								as [Measure Version],
+        	   
+     if(Mid(Inputstring,8,2) = 'CY', '20' & Right(Subfield(Inputstring,'~',3),2) & right(Inputstring, 3), 
+   		if(Mid(Inputstring,5,2) = 'CY', '20' & Right(Subfield(Inputstring,'~',3),2) & right(Inputstring, 3),
+   		'2014' & right(Inputstring, 3))) 																			as [MonthKey]   				
+Resident temp
+Where not WildMatch(Account,'PLGLOBRE','COST_TOT') //do not load; included in Excel for sense-check
+;
+DROP Table temp;
+///$tab Business Unit
+BUBridge:
+//Hierarchy(_buid, [Parent BU], BU, BU_NodeParent, BU, [BU Hierarchy], '~', BU_NodeDepth)
+//LOAD 
+//	 BU_ID 												as _buid,
+//     Parent_BU 											as [Parent BU],
+//     BU_Name 											as BU,
+//     BU_Level_ID 										as [BU Level ID],
+//     BU_Level_Name 										as [BU Level Name];
+//LOAD Text(BU_ID) 										as BU_ID, 
+//     Text(Parent_BU) 									as Parent_BU, 
+//     BU_Name,
+//     BU_Level_ID,
+//     BU_Level_Name     
+//FROM
+//[..\1.SourceData\DimensionTables\BusinessUnitsHierarchy.csv]
+//(txt, codepage is 1252, embedded labels, delimiter is ',', msq)
+//where ToLoad = 1;
+
+LOAD 
+	 HierarchyName,
+	 Replace(Hierarchy,'<-','~')	as [BU Hierarchy],
+	 ParentId, 
+	 Node,
+	 Text(NodeId)							as BU_ID, 
+	 Parent,
+	 Node1, 
+     Node2, 
+     Node3, 
+     Node4, 
+     Node5, 
+     Node6, 
+     Node7, 
+     Node8, 
+     Node9, 
+     Node10, 
+     Node11, 
+     Node12,  
+     Level
+FROM
+[..\3.QVD\Transformed\Mint2_BusinessUnits.qvd]
+(qvd)
+Where Exists(BU_ID,Text(NodeId))
+;
+///$tab Account
+AccountsTemp:
+LOAD * Inline 
+	[
+	_accountid,	Parent_Account,	Account,	Account_Type,	Cost_Level_ID
+	REV_TOT,				  ,	Revenue,	Reporting,
+	90002500,				  ,	Headcount,	Reporting,
+	]
+	;
+	
+Join (AccountsTemp)
+LOAD 
+	 @1 as Cost_Level_ID, 
+     @2 as _accountid, 
+     @3 as Parent_Account, 
+     @4 as [Account Type], 
+     @5 as Account
+FROM
+[..\1.SourceData\DimensionTables\CostsHierarchy.csv]
+(txt, codepage is 1252, no labels, delimiter is ',', msq, header is 2 lines)
+Where Len(@2)>0
+;
+
+Accounts:
+Hierarchy(_accountid, [Parent Account], Account, Account_NodeParent, Account, [Account Hierarchy], '~', Account_NodeDepth)
+LOAD 
+	 Text(_accountid)		as _accountid,
+     Text(Parent_Account)	as [Parent Account],
+     Account,
+     Account_Type			as [Account Type],
+     Cost_Level_ID			as [Cost Level ID] 
+Resident AccountsTemp;
+
+DROP Table AccountsTemp;
+
+    
+///$tab Calendar
+//****************************************************************************************
+// This script builds a master calendar table with both fiscal and calendar based fields
+//****************************************************************************************
+
+// This is the number of months that the fiscal periods are offset against the calendar 
+// periods. A value of 4 results in a April to March fiscal year.
+SET vFiscalOffset = 4;
+
+// Assign values directly just for SIB
+//----------------------------------------------------------------------------------------
+LET vMinDate      = Num(MakeDate(2012, 4, 30)); // To-do: change to a dynamic set of start and end dates.
+LET vMaxDate      = Num(MakeDate(2015, 3, 31)); 
+LET vCurrPeriod   = Num(MakeDate(2014, 8, 31));
+LET vCurrentFiscalYear = 2015; //Revew to see where this value is used
+
+//Wwe are assuming that the last completed financial period was Feb 2014 
+LET vPriorPeriod = Num(AddMonths(Date($(vCurrPeriod)), -1));
+LET vCurrMonthID = (year(date($(vPriorPeriod)))*12) + month($(vPriorPeriod));
+
+//------------------------ Temporary Calendar --------------------------------------------
+// We now generate a table containing all the dates between our MinDate and MaxDate values
+//----------------------------------------------------------------------------------------
+TempCal:
+LOAD 
+       date($(vMinDate) + rowno() - 1) as TempDate 
+AUTOGENERATE 
+       $(vMaxDate) - $(vMinDate) + 1; 
+
+//------------------------ Apply Map -----------------------------------------------------
+// This section contains maps to create fields we can't create with functions
+//----------------------------------------------------------------------------------------
+MonthLongMap:
+Mapping LOAD * Inline [
+CalMonth, MonthLong
+1, January
+2, February
+3, March
+4, April
+5, May
+6, June
+7, July
+8, August
+9, September
+10, October
+11, November
+12, December
+];
+
+//------------------------ Master Calendar -----------------------------------------------
+// Using the list of dates created in TempCal we can now create the master calendar 
+// We name our unique date based key OrderDate so that it links back to our data model
+//----------------------------------------------------------------------------------------
+LET vCurrMonthID = (year($(vCurrPeriod))*12) + month($(vCurrPeriod));
+
+MasterCalendar:
+LOAD
+       // Required for Experian Finance POC
+       FiscalYear & FiscalMonth as MonthKey,
+       FiscalMonth & Right(FiscalYear, 2) as FiscalMonthYear,
+       *;
+
+LOAD   
+       TempDate AS CalDate,
+       Weekday(TempDate) AS WeekDay,
+       Date(MonthStart(TempDate), 'MMMYY') as MonthYear,
+       
+       
+       // calendar year fields 
+       Week(TempDate)  as CalWeek,
+       Month(TempDate) as CalMonth,
+       Year(TempDate)  as CalYear,
+       Day(TempDate)   as CalDay,
+       Week(TempDate)&'-'&Year(TempDate) as CalWeekYear,
+              
+       // fiscal year fields 
+       num(Month(addmonths(TempDate, 13 - $(vFiscalOffset)))) as FiscalPeriod,
+       Dual(Month(TempDate), num(month(monthstart(TempDate, 13 - $(vFiscalOffset))))) as FiscalMonth,
+       Dual(ApplyMap('MonthLongMap', Month(TempDate), Null()), num(month(monthstart(TempDate, 13 - $(vFiscalOffset)))))  as FiscalMonthLong,
+       num(year(addmonths(TempDate, 13 - $(vFiscalOffset)))) as FiscalYear,
+       'Q' & ceil(month(monthstart(TempDate, 13 - $(vFiscalOffset))) / 3) as FiscalQuarter,
+       num(year(addmonths(TempDate, 13 - $(vFiscalOffset)))) & ' ' & 'Q' & ceil(month(monthstart(TempDate, 13 - $(vFiscalOffset))) / 3) as FiscalYearQuarter,
+       
+       // fields use for determining last month in quarter and last month in year.  If year is in progress, last completed period is flagged
+       if(TempDate < $(vPriorPeriod), if(mod(num(Month(addmonths(TempDate, 13 - $(vFiscalOffset)))), 3) = 0, 1, 0), if(TempDate = $(vPriorPeriod), 1, 0)) as QLMFlag,
+       if(TempDate < $(vPriorPeriod), if(Num(Month(addmonths(TempDate, 13 - $(vFiscalOffset)))) = 12, 1, 0),  if(TempDate = $(vPriorPeriod), 1, 0)) as YLMFlag,
+       
+
+       // The following flags are useful for Set Analysis formulas, to get specific date based sub-sets of data
+       
+       // Assume current month is the last COMPLETE month (which is actually prior mth)
+       if(monthstart(TempDate)=monthstart(AddMonths($(vCurrPeriod), -1)), 1, 0) as CurMTDFlag,
+       if(monthstart(TempDate)=monthstart(AddMonths($(vCurrPeriod), -2)), 1, 0) as PriorMTDFlag,
+
+       // Work out current fiscal year flag and fiscal years Old flag
+       if(year(monthstart(TempDate, 13 - $(vFiscalOffset)))=year(monthstart($(vPriorPeriod), 13 - $(vFiscalOffset))), 1, 0) as CurFiscalFlag,
+       if(year(monthstart(TempDate, 13 - $(vFiscalOffset)))<=year(monthstart($(vPriorPeriod), 13 - $(vFiscalOffset))),
+              year(monthstart($(vPriorPeriod), 13 - $(vFiscalOffset)))-year(monthstart(TempDate, 13 - $(vFiscalOffset))) 
+         ) as FiscalYearsOld,
+
+       //Assume current week is the last COMPLETE week (which is actually prior wk)
+       if(WeekStart(TempDate)=WeekStart($(vToday)-7), 1, 0) AS CurrWeekFlag,
+       if(WeekStart(TempDate)=WeekStart($(vToday)-14), 1, 0) AS PriorWeekFlag,
+
+       // Rolling 12 Months current and prior year       
+       if(TempDate>=monthstart(AddMonths($(vCurrPeriod), -12)) AND TempDate<monthstart($(vCurrPeriod)), 1, 0) as Rolling12MonthFlag,
+       if(TempDate>=monthstart(AddMonths($(vCurrPeriod), -24)) AND TempDate<monthstart(AddMonths($(vCurrPeriod), -12)), 1, 0) as RollingPrior12MonthFlag,
+
+
+       // Create an index with Current Period being 0 and prior periods numbered according to how many months ago from current period
+       if(num(TempDate)>$(vPriorPeriod), 0, 
+              $(vCurrMonthID) - ((year(TempDate)*12) + month(TempDate))
+         ) as PeriodsOld,
+              
+       (year(TempDate)*12) + month(TempDate) - $(vCurrMonthID) as CurYearMthIndex
+
+// Load from temporary calendar table       
+RESIDENT TempCal 
+ORDER BY TempDate ASC;
+
+
+
+//----------------------------------------------------------------------------------------
+// Drop the temporary tables 
+//----------------------------------------------------------------------------------------
+DROP TABLE TempCal;
+
+
+//----------------------------------------------------------------------------------------
+// Drop Day level fields if you only need a Monhly calendar.  Reload distinct values to 
+// reduce the data
+//----------------------------------------------------------------------------------------
+DROP Fields CalDate, WeekDay, CalWeek, CalWeekYear, CalDay, CurrWeekFlag, PriorWeekFlag;
+
+NoConcatenate
+TempCalendar:
+LOAD Distinct *        
+Resident MasterCalendar;
+
+DROP Table MasterCalendar;
+RENAME Table TempCalendar to MasterCalendar;
