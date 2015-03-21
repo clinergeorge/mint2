@@ -38,7 +38,7 @@
         <DropShadow>false</DropShadow>
       </CaptionFont>
       <Name>
-        <v>Measure Version</v>
+        <v>BU ID</v>
       </Name>
       <Bmp enctype="base64"></Bmp>
       <BmpMode>0</BmpMode>
@@ -233,7 +233,7 @@
         <ExtraBorderSpace16>0</ExtraBorderSpace16>
       </Right>
     </Borders>
-    <MultiColumn>false</MultiColumn>
+    <MultiColumn>true</MultiColumn>
     <OrderByRow>false</OrderByRow>
     <HideExcluded>false</HideExcluded>
     <SelectionStyle>SS_USER_PREF</SelectionStyle>
@@ -253,10 +253,12 @@
     <PreferredTextSearchMode>TEXT_SEARCH_NORMAL</PreferredTextSearchMode>
   </Layout>
   <Def>
-    <Name>Measure Version</Name>
+    <Name>BU_ID</Name>
     <Type>PRESENT</Type>
   </Def>
-  <Title></Title>
+  <Title>
+    <v>BU ID</v>
+  </Title>
   <PrintSettings>
     <Landscape>true</Landscape>
     <PrintCurrentSelectionPosition>NO_SELECTION</PrintCurrentSelectionPosition>
@@ -349,7 +351,7 @@
   <SortCriteria>
     <SortByState>0</SortByState>
     <SortByFrequency>0</SortByFrequency>
-    <SortByNumeric>0</SortByNumeric>
+    <SortByNumeric>1</SortByNumeric>
     <SortByAscii>1</SortByAscii>
     <SortByLoadOrder>0</SortByLoadOrder>
     <SortByExpression>0</SortByExpression>

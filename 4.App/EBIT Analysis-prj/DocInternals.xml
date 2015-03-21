@@ -149,38 +149,38 @@
     <String>1</String>
     <String>_ColorField</String>
     <String>52</String>
-    <String>1</String>
-    <String>Fact</String>
+    <String>2</String>
+    <String>Facts</String>
+    <String>BUBridge</String>
     <String>53</String>
-    <String>1</String>
-    <String>Fact</String>
+    <String>2</String>
+    <String>Facts</String>
+    <String>Accounts</String>
     <String>54</String>
     <String>2</String>
-    <String>Fact</String>
-    <String>BUBridge</String>
+    <String>Facts</String>
+    <String>MasterCalendar</String>
     <String>55</String>
-    <String>2</String>
-    <String>Fact</String>
-    <String>Accounts</String>
+    <String>1</String>
+    <String>Facts</String>
     <String>56</String>
     <String>1</String>
-    <String>Fact</String>
+    <String>Facts</String>
     <String>57</String>
     <String>1</String>
-    <String>Fact</String>
+    <String>Facts</String>
     <String>58</String>
     <String>1</String>
-    <String>Fact</String>
+    <String>Facts</String>
     <String>59</String>
     <String>1</String>
-    <String>Fact</String>
+    <String>Facts</String>
     <String>60</String>
     <String>1</String>
-    <String>Fact</String>
+    <String>BUBridge</String>
     <String>61</String>
-    <String>2</String>
-    <String>Fact</String>
-    <String>MasterCalendar</String>
+    <String>1</String>
+    <String>BUBridge</String>
     <String>62</String>
     <String>1</String>
     <String>BUBridge</String>
@@ -231,10 +231,10 @@
     <String>BUBridge</String>
     <String>78</String>
     <String>1</String>
-    <String>BUBridge</String>
+    <String>Accounts</String>
     <String>79</String>
     <String>1</String>
-    <String>BUBridge</String>
+    <String>Accounts</String>
     <String>80</String>
     <String>1</String>
     <String>Accounts</String>
@@ -267,10 +267,10 @@
     <String>Accounts</String>
     <String>90</String>
     <String>1</String>
-    <String>Accounts</String>
+    <String>MasterCalendar</String>
     <String>91</String>
     <String>1</String>
-    <String>Accounts</String>
+    <String>MasterCalendar</String>
     <String>92</String>
     <String>1</String>
     <String>MasterCalendar</String>
@@ -325,12 +325,6 @@
     <String>109</String>
     <String>1</String>
     <String>MasterCalendar</String>
-    <String>110</String>
-    <String>1</String>
-    <String>MasterCalendar</String>
-    <String>111</String>
-    <String>1</String>
-    <String>MasterCalendar</String>
   </FieldSrcTables>
   <TableViewData>
     <Pos></Pos>
@@ -348,7 +342,7 @@
           </TableViewTableWinSaveInfo>
           <TableViewTableWinSaveInfo>
             <Pos>
-              <Left>712</Left>
+              <Left>813</Left>
               <Top>133</Top>
               <Width>100</Width>
               <Height>208</Height>
@@ -357,7 +351,7 @@
           </TableViewTableWinSaveInfo>
           <TableViewTableWinSaveInfo>
             <Pos>
-              <Left>732</Left>
+              <Left>833</Left>
               <Top>516</Top>
               <Width>100</Width>
               <Height>208</Height>
@@ -366,7 +360,7 @@
           </TableViewTableWinSaveInfo>
           <TableViewTableWinSaveInfo>
             <Pos>
-              <Left>1008</Left>
+              <Left>1109</Left>
               <Top>312</Top>
               <Width>100</Width>
               <Height>406</Height>
@@ -375,12 +369,21 @@
           </TableViewTableWinSaveInfo>
           <TableViewTableWinSaveInfo>
             <Pos>
-              <Left>1019</Left>
+              <Left>1120</Left>
               <Top>77</Top>
               <Width>100</Width>
               <Height>208</Height>
             </Pos>
             <Caption>_ColorField</Caption>
+          </TableViewTableWinSaveInfo>
+          <TableViewTableWinSaveInfo>
+            <Pos>
+              <Left>380</Left>
+              <Top>171</Top>
+              <Width>100</Width>
+              <Height>172</Height>
+            </Pos>
+            <Caption>Facts</Caption>
           </TableViewTableWinSaveInfo>
         </Tables>
         <BroomPoints></BroomPoints>
@@ -434,13 +437,12 @@
           <String>$Field</String>
           <String>$Table</String>
           <String>$Info</String>
-          <String>Inputstring</String>
           <String>BU_ID</String>
           <String>_accountid</String>
-          <String>Scenario</String>
-          <String>Exceptions Flag</String>
-          <String>Measure Version</String>
           <String>MonthKey</String>
+          <String>Source</String>
+          <String>Scenario</String>
+          <String>Measure Version</String>
           <String>HierarchyName</String>
           <String>BU Hierarchy</String>
           <String>ParentId</String>
@@ -479,13 +481,12 @@
           <String>$Field</String>
           <String>$Table</String>
           <String>$Info</String>
-          <String>Inputstring</String>
           <String>BU_ID</String>
           <String>_accountid</String>
-          <String>Scenario</String>
-          <String>Exceptions Flag</String>
-          <String>Measure Version</String>
           <String>MonthKey</String>
+          <String>Source</String>
+          <String>Scenario</String>
+          <String>Measure Version</String>
           <String>HierarchyName</String>
           <String>BU Hierarchy</String>
           <String>ParentId</String>
@@ -570,9 +571,10 @@
           <String>_cLitePurpleT</String>
           <String>_cLiteYellowT</String>
           <String>_cLiteRedT</String>
-          <String>Value</String>
           <String>Amount</String>
+          <String>Exceptions</String>
           <String>Level</String>
+          <String>Cost Level ID</String>
           <String>Account_NodeDepth</String>
           <String>MonthYear</String>
           <String>CalMonth</String>
@@ -645,9 +647,8 @@
           <String>_cLitePurpleT</String>
           <String>_cLiteYellowT</String>
           <String>_cLiteRedT</String>
-          <String>Value</String>
-          <String>Amount</String>
           <String>Level</String>
+          <String>Cost Level ID</String>
           <String>Account_NodeDepth</String>
           <String>MonthYear</String>
           <String>CalMonth</String>

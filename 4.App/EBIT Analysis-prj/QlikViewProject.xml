@@ -1,4 +1,4 @@
-﻿<!-- Last project change: 2015-03-19 23:09:51 (2015-03-20 03:09:51) -->
+﻿<!-- Last project change: 2015-03-21 08:45:17 (2015-03-21 12:45:17) -->
 <PrjQlikViewProject>
   <GLOBAL>
     <AllPropertiesFileName>AllProperties.xml</AllPropertiesFileName>
@@ -12,7 +12,7 @@
   <SHEETS>
     <PrjSheetProperties>
       <SheetId>Document\SH01</SheetId>
-      <IsActive>false</IsActive>
+      <IsActive>true</IsActive>
       <ChildObjects>
         <PrjFrameParentDef>
           <ObjectId>Document\TX315</ObjectId>
@@ -761,40 +761,6 @@
           </MinimizedRect>
           <ShowMode>1</ShowMode>
           <ZedLevel>-2</ZedLevel>
-        </PrjFrameParentDef>
-        <PrjFrameParentDef>
-          <ObjectId>Document\TX338</ObjectId>
-          <Rect>
-            <Left>234</Left>
-            <Top>1588</Top>
-            <Width>450</Width>
-            <Height>450</Height>
-          </Rect>
-          <MinimizedRect>
-            <Left>0</Left>
-            <Top>0</Top>
-            <Width>297</Width>
-            <Height>102</Height>
-          </MinimizedRect>
-          <ShowMode>1</ShowMode>
-          <ZedLevel>-1</ZedLevel>
-        </PrjFrameParentDef>
-        <PrjFrameParentDef>
-          <ObjectId>Document\TX337</ObjectId>
-          <Rect>
-            <Left>4381</Left>
-            <Top>294</Top>
-            <Width>450</Width>
-            <Height>450</Height>
-          </Rect>
-          <MinimizedRect>
-            <Left>0</Left>
-            <Top>0</Top>
-            <Width>297</Width>
-            <Height>102</Height>
-          </MinimizedRect>
-          <ShowMode>1</ShowMode>
-          <ZedLevel>-1</ZedLevel>
         </PrjFrameParentDef>
         <PrjFrameParentDef>
           <ObjectId>Document\TX163</ObjectId>
@@ -2395,23 +2361,6 @@
           <ZedLevel>0</ZedLevel>
         </PrjFrameParentDef>
         <PrjFrameParentDef>
-          <ObjectId>Document\CH09</ObjectId>
-          <Rect>
-            <Left>2863</Left>
-            <Top>159</Top>
-            <Width>1500</Width>
-            <Height>1022</Height>
-          </Rect>
-          <MinimizedRect>
-            <Left>0</Left>
-            <Top>0</Top>
-            <Width>297</Width>
-            <Height>102</Height>
-          </MinimizedRect>
-          <ShowMode>1</ShowMode>
-          <ZedLevel>0</ZedLevel>
-        </PrjFrameParentDef>
-        <PrjFrameParentDef>
           <ObjectId>Document\LB08</ObjectId>
           <Rect>
             <Left>25</Left>
@@ -2432,7 +2381,7 @@
           <ObjectId>Document\LB30</ObjectId>
           <Rect>
             <Left>19</Left>
-            <Top>991</Top>
+            <Top>1522</Top>
             <Width>734</Width>
             <Height>500</Height>
           </Rect>
@@ -2547,11 +2496,62 @@
           <ShowMode>1</ShowMode>
           <ZedLevel>0</ZedLevel>
         </PrjFrameParentDef>
+        <PrjFrameParentDef>
+          <ObjectId>Document\LB36_666381929</ObjectId>
+          <Rect>
+            <Left>19</Left>
+            <Top>991</Top>
+            <Width>734</Width>
+            <Height>469</Height>
+          </Rect>
+          <MinimizedRect>
+            <Left>0</Left>
+            <Top>0</Top>
+            <Width>297</Width>
+            <Height>102</Height>
+          </MinimizedRect>
+          <ShowMode>1</ShowMode>
+          <ZedLevel>0</ZedLevel>
+        </PrjFrameParentDef>
+        <PrjFrameParentDef>
+          <ObjectId>Document\CH42_657978530</ObjectId>
+          <Rect>
+            <Left>2863</Left>
+            <Top>159</Top>
+            <Width>1500</Width>
+            <Height>1022</Height>
+          </Rect>
+          <MinimizedRect>
+            <Left>0</Left>
+            <Top>0</Top>
+            <Width>297</Width>
+            <Height>102</Height>
+          </MinimizedRect>
+          <ShowMode>1</ShowMode>
+          <ZedLevel>0</ZedLevel>
+        </PrjFrameParentDef>
+        <PrjFrameParentDef>
+          <ObjectId>Document\CH43_521799017</ObjectId>
+          <Rect>
+            <Left>2863</Left>
+            <Top>159</Top>
+            <Width>1500</Width>
+            <Height>1022</Height>
+          </Rect>
+          <MinimizedRect>
+            <Left>0</Left>
+            <Top>0</Top>
+            <Width>297</Width>
+            <Height>102</Height>
+          </MinimizedRect>
+          <ShowMode>1</ShowMode>
+          <ZedLevel>0</ZedLevel>
+        </PrjFrameParentDef>
       </ChildObjects>
     </PrjSheetProperties>
     <PrjSheetProperties>
       <SheetId>Document\SH02</SheetId>
-      <IsActive>true</IsActive>
+      <IsActive>false</IsActive>
       <ChildObjects>
         <PrjFrameParentDef>
           <ObjectId>Document\TX303</ObjectId>

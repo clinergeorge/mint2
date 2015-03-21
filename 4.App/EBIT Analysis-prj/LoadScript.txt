@@ -65,36 +65,196 @@ AUTOGENERATE 1;
 
   
 ///$tab Hackdata
-temp:
-CrossTable(Inputstring, Value, 2)
-LOAD *
+//temp:
+//CrossTable(Inputstring, Value, 2)
+//LOAD *
+//FROM
+//[..\1.SourceData\FactTables\Hackdata.csv]
+//(txt, codepage is 1252, embedded labels, delimiter is ',', msq, header is 11 lines);
+//
+//
+////to-do: refactor
+//Fact:
+//LOAD Text(BU)																										as BU_ID,
+//     Text(Account) 																									as _accountid,
+//     Inputstring, //uncomment for debugging
+//     Value, //uncomment for debugging
+//     if(Right(Subfield(Inputstring,'~',1),14) = '_BR_Exceptions', Value, Null()) 									as Exceptions,
+//     
+//     if(Right(Subfield(Inputstring,'~',1),14) <> '_BR_Exceptions', Value, Null()) 									as Amount,
+//     
+//     if(Left(Inputstring, 6) = 'Actual', 'Actual',
+//     	if(Left(Inputstring, 6) = 'Budget', 'Budget', 'MMC')) 														as Scenario,
+//     	
+//     if(Right(Subfield(Inputstring,'~',1),14) = '_BR_Exceptions', 'Y', 'N') 										as [Exceptions Flag],
+//     
+//     if(Wildmatch(Subfield(Inputstring,'~', 2), 'Final') = 1, 'Final', 
+//     	if(Wildmatch(Subfield(Inputstring,'~', 2), 'HYR') = 1, 'Working',
+//     	   if(Wildmatch(Subfield(Inputstring,'~', 2), 'MMC6') = 1, 'MMC6', Null()))) 								as [Measure Version],
+//        	   
+//     if(Mid(Inputstring,8,2) = 'CY', '20' & Right(Subfield(Inputstring,'~',3),2) & right(Inputstring, 3), 
+//   		if(Mid(Inputstring,5,2) = 'CY', '20' & Right(Subfield(Inputstring,'~',3),2) & right(Inputstring, 3),
+//   		'2014' & right(Inputstring, 3))) 																			as [MonthKey]   				
+//Resident temp
+//Where not WildMatch(Account,'PLGLOBRE','COST_TOT') //do not load; included in Excel for sense-check
+//;
+//DROP Table temp;
+///$tab Facts
+Facts:
+LOAD BU_ID, 
+     [Account ID]     as _accountid, 
+     MonthKey, 
+     Source, 
+     Scenario, 
+     [Measure Version], 
+     Amount, 
+     Exceptions
 FROM
-[..\1.SourceData\FactTables\Hackdata.csv]
-(txt, codepage is 1252, embedded labels, delimiter is ',', msq, header is 11 lines);
+[..\3.QVD\Transformed\Corp_FY13_14_Actual_Final.qvd]
+(qvd);
+
+LOAD BU_ID, 
+     [Account ID]     as _accountid, 
+     MonthKey, 
+     Source, 
+     Scenario, 
+     [Measure Version], 
+     Amount, 
+     Exceptions
+FROM
+[..\3.QVD\Transformed\Corp_FY15_Actual_Final.qvd]
+(qvd);
 
 
-//to-do: refactor
-Fact:
-LOAD Text(BU)																										as BU_ID,
-     Text(Account) 																									as _accountid,
-     Inputstring, //uncomment for debugging
-     Value, //uncomment for debugging
-     if(Right(Subfield(Inputstring,'~',1),14) = '_BR_Exceptions', Value, Null()) 									as Exceptions,
-     if(Right(Subfield(Inputstring,'~',1),14) <> '_BR_Exceptions', Value, Null()) 									as Amount,
-     if(Left(Inputstring, 6) = 'Actual', 'Actual',
-     	if(Left(Inputstring, 6) = 'Budget', 'Budget', 'MMC')) 														as Scenario,
-     if(Right(Subfield(Inputstring,'~',1),14) = '_BR_Exceptions', 'Y', 'N') 										as [Exceptions Flag],
-     if(Wildmatch(Subfield(Inputstring,'~', 2), 'Final') = 1, 'Final', 
-     	if(Wildmatch(Subfield(Inputstring,'~', 2), 'HYR') = 1, 'Working',
-     	   if(Wildmatch(Subfield(Inputstring,'~', 2), 'MMC6') = 1, 'MMC6', Null()))) 								as [Measure Version],
-        	   
-     if(Mid(Inputstring,8,2) = 'CY', '20' & Right(Subfield(Inputstring,'~',3),2) & right(Inputstring, 3), 
-   		if(Mid(Inputstring,5,2) = 'CY', '20' & Right(Subfield(Inputstring,'~',3),2) & right(Inputstring, 3),
-   		'2014' & right(Inputstring, 3))) 																			as [MonthKey]   				
-Resident temp
-Where not WildMatch(Account,'PLGLOBRE','COST_TOT') //do not load; included in Excel for sense-check
-;
-DROP Table temp;
+LOAD BU_ID, 
+     [Account ID]     as _accountid, 
+     MonthKey, 
+     Source, 
+     Scenario, 
+     [Measure Version], 
+     Amount, 
+     Exceptions
+FROM
+[..\3.QVD\Transformed\Corp_FY15_Budget_Final.qvd]
+(qvd);
+
+
+LOAD BU_ID, 
+     [Account ID]     as _accountid, 
+     MonthKey, 
+     Source, 
+     Scenario, 
+     [Measure Version], 
+     Amount, 
+     Exceptions
+FROM
+[..\3.QVD\Transformed\Corp_FY15_Latest_Fcast_Final.qvd]
+(qvd);
+
+
+LOAD BU_ID, 
+     [Account ID]     as _accountid, 
+     MonthKey, 
+     Source, 
+     Scenario, 
+     [Measure Version], 
+     Amount, 
+     Exceptions
+FROM
+[..\3.QVD\Transformed\Corp_FY15_MMC_MMC10.qvd]
+(qvd);
+
+
+LOAD BU_ID, 
+     [Account ID]     as _accountid, 
+     MonthKey, 
+     Source, 
+     Scenario, 
+     [Measure Version], 
+     Amount, 
+     Exceptions
+FROM
+[..\3.QVD\Transformed\Corp_FY15_MMC_MMC11.qvd]
+(qvd);
+
+
+LOAD BU_ID, 
+     [Account ID]     as _accountid, 
+     MonthKey, 
+     Source, 
+     Scenario, 
+     [Measure Version], 
+     Amount, 
+     Exceptions
+FROM
+[..\3.QVD\Transformed\ECS_FY13_14_Actual_Final.qvd]
+(qvd);
+
+
+LOAD BU_ID, 
+     [Account ID]     as _accountid, 
+     MonthKey, 
+     Source, 
+     Scenario, 
+     [Measure Version], 
+     Amount, 
+     Exceptions
+FROM
+[..\3.QVD\Transformed\ECS_FY15_Actual_Final.qvd]
+(qvd);
+
+
+LOAD BU_ID, 
+     [Account ID]     as _accountid, 
+     MonthKey, 
+     Source, 
+     Scenario, 
+     [Measure Version], 
+     Amount, 
+     Exceptions
+FROM
+[..\3.QVD\Transformed\ECS_FY15_Budget_Final.qvd]
+(qvd);
+
+
+LOAD BU_ID, 
+     [Account ID]     as _accountid, 
+     MonthKey, 
+     Source, 
+     Scenario, 
+     [Measure Version], 
+     Amount, 
+     Exceptions
+FROM
+[..\3.QVD\Transformed\ECS_FY15_Latest_Fcst_Final.qvd]
+(qvd);
+
+
+LOAD BU_ID, 
+     [Account ID]     as _accountid, 
+     MonthKey, 
+     Source, 
+     Scenario, 
+     [Measure Version], 
+     Amount, 
+     Exceptions
+FROM
+[..\3.QVD\Transformed\ECS_FY15_MMC_MMC10.qvd]
+(qvd);
+
+
+LOAD BU_ID, 
+     [Account ID]     as _accountid, 
+     MonthKey, 
+     Source, 
+     Scenario, 
+     [Measure Version], 
+     Amount, 
+     Exceptions
+FROM
+[..\3.QVD\Transformed\ECS_FY15_MMC_MMC11.qvd]
+(qvd);
+
 ///$tab Business Unit
 BUBridge:
 //Hierarchy(_buid, [Parent BU], BU, BU_NodeParent, BU, [BU Hierarchy], '~', BU_NodeDepth)
@@ -119,7 +279,7 @@ LOAD
 	 Replace(Hierarchy,'<-','~')	as [BU Hierarchy],
 	 ParentId, 
 	 Node,
-	 Text(NodeId)							as BU_ID, 
+	 Text(NodeId)					as BU_ID, 
 	 Parent,
 	 Node1, 
      Node2, 
