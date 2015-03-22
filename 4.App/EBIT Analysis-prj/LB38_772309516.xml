@@ -38,7 +38,7 @@
         <DropShadow>false</DropShadow>
       </CaptionFont>
       <Name>
-        <v>Account Hierarchy</v>
+        <v>sc1</v>
       </Name>
       <Bmp enctype="base64"></Bmp>
       <BmpMode>0</BmpMode>
@@ -59,8 +59,8 @@
       <LockIcon>false</LockIcon>
       <HelpText></HelpText>
       <ObjectId></ObjectId>
-      <ShrinkFrameToData>false</ShrinkFrameToData>
-      <ShowCaption>true</ShowCaption>
+      <ShrinkFrameToData>true</ShrinkFrameToData>
+      <ShowCaption>false</ShowCaption>
       <MultiLine>0</MultiLine>
       <ActiveBgColor>
         <Mode>COLORAREA_SOLID</Mode>
@@ -166,12 +166,7 @@
       <Rainbow>false</Rainbow>
       <TextAdjustHorizontal>0</TextAdjustHorizontal>
       <TextAdjustVertical>4</TextAdjustVertical>
-      <Show>
-        <Always>false</Always>
-        <Expression>
-          <v>vMenu=2</v>
-        </Expression>
-      </Show>
+      <Show></Show>
       <AllowMoveSize>true</AllowMoveSize>
       <AllowCopyClone>true</AllowCopyClone>
       <dummy></dummy>
@@ -233,10 +228,10 @@
         <ExtraBorderSpace16>0</ExtraBorderSpace16>
       </Right>
     </Borders>
-    <MultiColumn>false</MultiColumn>
+    <MultiColumn>true</MultiColumn>
     <OrderByRow>false</OrderByRow>
     <HideExcluded>false</HideExcluded>
-    <SelectionStyle>SS_USER_PREF</SelectionStyle>
+    <SelectionStyle>SS_WINDOWS</SelectionStyle>
     <ImageRepresentation></ImageRepresentation>
     <SoftLock>false</SoftLock>
     <ExcludedValuesMode>0</ExcludedValuesMode>
@@ -245,23 +240,23 @@
     <FixedColumnsCount>-1</FixedColumnsCount>
     <LayoutDependentPrint>true</LayoutDependentPrint>
     <PrintAllValues>false</PrintAllValues>
-    <HierarchySeparator>~</HierarchySeparator>
-    <ShowAsTreeView>true</ShowAsTreeView>
+    <HierarchySeparator>/</HierarchySeparator>
+    <ShowAsTreeView>false</ShowAsTreeView>
     <CurrentInfoURL></CurrentInfoURL>
     <SuppressSearchHighlight>false</SuppressSearchHighlight>
     <TextColor></TextColor>
     <PreferredTextSearchMode>TEXT_SEARCH_NORMAL</PreferredTextSearchMode>
   </Layout>
   <Def>
-    <Name>Account Hierarchy</Name>
+    <Name>sc1</Name>
     <Type>PRESENT</Type>
   </Def>
   <Title></Title>
   <PrintSettings>
     <Landscape>true</Landscape>
-    <PrintCurrentSelectionPosition>NO_SELECTION</PrintCurrentSelectionPosition>
-    <ShowTimeStamp>false</ShowTimeStamp>
-    <ShowWindowTitle>false</ShowWindowTitle>
+    <PrintCurrentSelectionPosition>BOTTOM_OF_ALL_PAGES</PrintCurrentSelectionPosition>
+    <ShowTimeStamp>true</ShowTimeStamp>
+    <ShowWindowTitle>true</ShowWindowTitle>
     <MarginLeft>236</MarginLeft>
     <MarginTop>236</MarginTop>
     <MarginRight>236</MarginRight>
@@ -274,7 +269,7 @@
     <MarginHeader>120</MarginHeader>
     <MarginFooter>120</MarginFooter>
     <Header_Left_Font>
-      <FontName>@Arial Unicode MS</FontName>
+      <FontName>Tahoma</FontName>
       <PointSize1000>8000</PointSize1000>
       <Underline>false</Underline>
       <Bold>false</Bold>
@@ -282,7 +277,7 @@
       <DropShadow>false</DropShadow>
     </Header_Left_Font>
     <Header_Center_Font>
-      <FontName>@Arial Unicode MS</FontName>
+      <FontName>Tahoma</FontName>
       <PointSize1000>8000</PointSize1000>
       <Underline>false</Underline>
       <Bold>false</Bold>
@@ -290,7 +285,7 @@
       <DropShadow>false</DropShadow>
     </Header_Center_Font>
     <Header_Right_Font>
-      <FontName>@Arial Unicode MS</FontName>
+      <FontName>Tahoma</FontName>
       <PointSize1000>8000</PointSize1000>
       <Underline>false</Underline>
       <Bold>false</Bold>
@@ -298,7 +293,7 @@
       <DropShadow>false</DropShadow>
     </Header_Right_Font>
     <Footer_Left_Font>
-      <FontName>@Arial Unicode MS</FontName>
+      <FontName>Tahoma</FontName>
       <PointSize1000>8000</PointSize1000>
       <Underline>false</Underline>
       <Bold>false</Bold>
@@ -306,7 +301,7 @@
       <DropShadow>false</DropShadow>
     </Footer_Left_Font>
     <Footer_Center_Font>
-      <FontName>@Arial Unicode MS</FontName>
+      <FontName>Tahoma</FontName>
       <PointSize1000>8000</PointSize1000>
       <Underline>false</Underline>
       <Bold>false</Bold>
@@ -314,7 +309,7 @@
       <DropShadow>false</DropShadow>
     </Footer_Center_Font>
     <Footer_Right_Font>
-      <FontName>@Arial Unicode MS</FontName>
+      <FontName>Tahoma</FontName>
       <PointSize1000>8000</PointSize1000>
       <Underline>false</Underline>
       <Bold>false</Bold>
@@ -356,42 +351,7 @@
     <Expression></Expression>
   </SortCriteria>
   <NumberPresentation></NumberPresentation>
-  <ExpandedNodes>
-    <int>-1</int>
-    <int>-2</int>
-    <int>-3</int>
-    <int>-4</int>
-    <int>-5</int>
-    <int>-6</int>
-    <int>-7</int>
-    <int>-8</int>
-    <int>-9</int>
-    <int>-10</int>
-    <int>-11</int>
-    <int>-12</int>
-    <int>3</int>
-    <int>-13</int>
-    <int>-14</int>
-    <int>-15</int>
-    <int>-16</int>
-    <int>-17</int>
-    <int>-18</int>
-    <int>-19</int>
-    <int>-20</int>
-    <int>-21</int>
-    <int>-22</int>
-    <int>-23</int>
-    <int>-24</int>
-    <int>-25</int>
-    <int>-26</int>
-    <int>-27</int>
-    <int>-28</int>
-    <int>-29</int>
-    <int>-30</int>
-    <int>-31</int>
-    <int>-32</int>
-    <int>-33</int>
-  </ExpandedNodes>
+  <ExpandedNodes></ExpandedNodes>
   <OnSelectActionItems></OnSelectActionItems>
   <SuppressAutoSortByState>false</SuppressAutoSortByState>
   <Expressions></Expressions>

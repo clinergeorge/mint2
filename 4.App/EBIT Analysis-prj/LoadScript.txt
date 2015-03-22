@@ -476,3 +476,15 @@ Resident MasterCalendar;
 
 DROP Table MasterCalendar;
 RENAME Table TempCalendar to MasterCalendar;
+///$tab Islands
+mv1:
+LOAD Distinct
+	[Measure Version]		as mv1
+Resident Facts
+;
+
+sc1:
+LOAD Distinct
+	Scenario 				as sc1
+Resident Facts
+;
