@@ -1,0 +1,39 @@
+Tab,Object,Item,Description,Notes,Est Hours,Status
+George,Development,0.1,Bring in new hierarchy qvd provided 3/17,,0.5,Complete
+George,Development,0.2,Change fact table from HackData to new files,,4,Complete
+George,Development,0.3,Fix all hardcoded date variables,,0.5,
+George,Development,0.4,Create conditionally shown admin per tab,,2,
+George,Development,0.5,Refactor transform qvw to use for..loop to load data extract files of same structures,Iteration 2,2,
+General,,1.1,Remove “HC Legacy” and “Passport”; they are now integrated and the separation no longer applies,Lori will change on next data pull,0,Complete
+General,,1.2,Dashboard tab resets the user's selection every time the user switches back to the Dashboard tab,Remove clear trigger on activate of Dashboard tab,0,Complete
+General,,1.3,What is logic for Qtrs and Months on the Dashboard tab?  Which takes precedence?,,1,
+General,,1.4,Switching between tabs changes user's selection unexpectedly,Remove clear triggers,0,Complete
+General,,1.5,Build in all BUs/segments for Core NA and Total NA view,,,
+General,,1.6,"Build in other scenarios – multiple MMCs, FY16 budget",,,Complete
+General,,1.7,"Additional graphics – FTE/Salary/Total Labour trend chart, Capital data (not captured currently)?",,,
+General,,1.8,"Incorporate both standard Cost account hierarchy AND new Global Cost Separation hierarchy (Global separation applies only to ’15 and ’16, not ’14, so some graphics using Prior Year need old hierarchy)",Where is Global Cost Separation heirarchy data?,3,Pending
+General,,1.9," Incorporate more FTE/Labor data now that Workforce Planning in place (“FTEAfterAttrition” and “Attrition”, FT, PT, Consultants)",Not in this Phase,0,
+Dashboard,Summary Table,2.1," Current period variances look correct through July (BU tested = CIS) but for months after July, Current Per. Variance = Current Period amount.  This implies no Prior Year or Budget amount to compare for periods after July which should not be the case","Replace the text objects in upper left with ""Financial Summary""",0,Pending
+Dashboard,Summary Table,2.2,YTD data changes if a quarter is selected versus not (example: July with Q2 vs. July without selecting Q2),"YTD should always use month selected as default; only use Qtr if no month selected.  YTD should always show actuals up through the last month of the Qtr if Qtr selected, not zero (example: through October whether “Oct” selected or “Q3”)",0,Pending
+Dashboard,Summary Table,2.3,FTE – Looks like it’s summing instead of using last month of the period selected,,0,Pending
+Dashboard,Summary Table,2.4,Fill in Variance for ULGs (blank now),Replacing wit Financial Summary??,0,Pending
+Dashboard,Summary Table,2.5,"Add section to right of YTD for ""Full Year Forecast""; show current “Working” MMC, variance to Prior MMC, Prior Year, Budget","Replace the text objects in upper left with ""Financial Summary""",0,Pending
+Dashboard,Revenue vs EBIT,3.1,"EBIT month amounts look to be summing Actual, Budget, MMC, whatever data is available (example: CIS EBIT runs approx. $30M/month; graph shows up to $100M in some periods)",This should only be Actual,2,Complete - Pending review
+Dashboard,Revenue vs EBIT,3.2,"Allow selection of what Actual is compared to (right now just Budget; would like option to choose MMC, Prior Year, HYR, etc. eventually)",,3,
+Dashboard,Labor vs Headcount,4.1,Use different color to distinguish forecast period bars vs. actuals,Need to know what color,0,Complete Pending Answer
+Dashboard,Cost Breakdown,5.1, Only Depreciation shows in the cost type chart (need to show other categories),,0,Complete
+Cost,Trend Chart,6.1,"This should be “Trend Chart” tab and allow any selection, not just a cost item (won’t display Revenue or Headcount)",,0,Pending Approval
+Cost,Trend Chart,6.2,Charts should not be dependent on other tabs except for BU selection (should always show 12-month view),Ignore any lower grain than year,1.5,
+Cost,,6.3,“Prior Year” is now showing – not sure what the previous issue was,,0,Complete
+Cost,,6.4,"Wishlist:  have multiple options to select/unselect for comparison – Budget, Prior Year (currently there) plus MMCx, MMCy, 3 years’ actuals",,4,
+Cost,,6.5,Wishlist:  can the Y-axis autoscale a bit better?  Example: Total Cost for CIS BU.  Lots of white space around cluster of data,Bad values in data were preventing auto scale even after Forced Zero was toggled,1,Complete
+ULG,,7.1,"Charts should not be dependent on other tabs except for BU selection (should always show Revenue, Sales, EBIT and FTE for 8 qtrs)","Option to add actual from a user specified scenario MMC1, 2, 3 etc",1.5,
+ULG,,7.2,"Cost ULG chart needs signs flipped (cost growth vs PY is a bad thing = negative sign, cost decrease vs PY is good thing = positive %)",,2,Pending - will check back with Lori
+ULG,,7.3,"For Healthcare, FY14 ULGs are showing Total Growth %s, not ULG (missing Exceptions in the calc)",This is on Summary Tab an on ULG Charts.,4,
+ULG,,7.4,"be able to select Forecast definition – Budget, MMCx, MMCy, 8 qtrs of actuals only",,2,
+P&L,,8.1,"Do “Costs” tab selections drive this, or vice versa?  Whenever I change one it changes other tabs but hard to see what is linked or not",,0,Complete
+P&L,,8.2,"Corporate Cost line is pulling “Other Costs” with “TotalPreAlloc” source instead of “Corporate Allocations” with “TotalCorpAlloc” source.  As a result Total Cost is off (2x counting Other Costs).  Strangely, this doesn’t seem to be a problem on the Dashboard tab (Total Cost is correct)",Needs Clarification,4,
+P&L,,8.3,Headcount should follow same logic as elsewhere (always show last period in period selected).  Currently for Q3 it is blank instead of showing October’s number,This chart and it's expression need a complete overhaul,4,
+P&L,,8.4,Add Total Year along with Qtrs for full view,Ask Lori more detail on this,,
+Financial Summary,,,,,,
+,,,,,42,
