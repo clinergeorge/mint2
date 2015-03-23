@@ -350,8 +350,8 @@
           </TableViewTableWinSaveInfo>
           <TableViewTableWinSaveInfo>
             <Pos>
-              <Left>813</Left>
-              <Top>133</Top>
+              <Left>859</Left>
+              <Top>94</Top>
               <Width>100</Width>
               <Height>208</Height>
             </Pos>
@@ -359,8 +359,8 @@
           </TableViewTableWinSaveInfo>
           <TableViewTableWinSaveInfo>
             <Pos>
-              <Left>833</Left>
-              <Top>516</Top>
+              <Left>869</Left>
+              <Top>365</Top>
               <Width>100</Width>
               <Height>208</Height>
             </Pos>
@@ -368,8 +368,8 @@
           </TableViewTableWinSaveInfo>
           <TableViewTableWinSaveInfo>
             <Pos>
-              <Left>1109</Left>
-              <Top>312</Top>
+              <Left>1023</Left>
+              <Top>300</Top>
               <Width>100</Width>
               <Height>406</Height>
             </Pos>
@@ -377,8 +377,8 @@
           </TableViewTableWinSaveInfo>
           <TableViewTableWinSaveInfo>
             <Pos>
-              <Left>1120</Left>
-              <Top>77</Top>
+              <Left>478</Left>
+              <Top>129</Top>
               <Width>100</Width>
               <Height>208</Height>
             </Pos>
@@ -386,12 +386,30 @@
           </TableViewTableWinSaveInfo>
           <TableViewTableWinSaveInfo>
             <Pos>
-              <Left>380</Left>
-              <Top>171</Top>
+              <Left>667</Left>
+              <Top>238</Top>
               <Width>100</Width>
               <Height>172</Height>
             </Pos>
             <Caption>Facts</Caption>
+          </TableViewTableWinSaveInfo>
+          <TableViewTableWinSaveInfo>
+            <Pos>
+              <Left>480</Left>
+              <Top>357</Top>
+              <Width>100</Width>
+              <Height>46</Height>
+            </Pos>
+            <Caption>mv1</Caption>
+          </TableViewTableWinSaveInfo>
+          <TableViewTableWinSaveInfo>
+            <Pos>
+              <Left>483</Left>
+              <Top>417</Top>
+              <Width>100</Width>
+              <Height>46</Height>
+            </Pos>
+            <Caption>sc1</Caption>
           </TableViewTableWinSaveInfo>
         </Tables>
         <BroomPoints></BroomPoints>

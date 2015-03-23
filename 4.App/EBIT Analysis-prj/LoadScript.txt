@@ -305,7 +305,7 @@ LOAD * Inline
 	[
 	_accountid,	Parent_Account,	Account,	Account_Type,	Cost_Level_ID
 	REV_TOT,				  ,	Revenue,	Reporting,
-	90002500,				  ,	Headcount,	Reporting,
+	FTEafterAttrition,		  ,	Headcount,	Reporting,
 	]
 	;
 	
