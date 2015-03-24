@@ -7,7 +7,7 @@ TOTCCX,,,,,,
 ,,,,,Actuals.,Actual Exceptions.
 ,,,,,Actual_CY_BR,Actual_CY_BR_Exceptions
 ,,,,,Final,Final
-BU.,Source.,Account.,Period.,Fiscal Year.,,
+BU.,Source.,Account.,Period.,Fiscal Year.,Actuals.Final,Actual Exceptions.Final
 113,Reporting,REV_TOT,Apr,FY13,,
 113,Reporting,PLLAB001,Apr,FY13,,
 113,Reporting,PLLAB002,Apr,FY13,,

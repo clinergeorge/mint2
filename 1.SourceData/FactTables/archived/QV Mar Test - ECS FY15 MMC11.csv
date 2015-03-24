@@ -7,7 +7,7 @@ TOTCCX,,,,,,
 ,,,,,MMC11.,MMC11 Exceptions.
 ,,,,,MMC_CY_BR,MMC_CY_BR_Exceptions
 ,,,,,MMC11,MMC11
-BU.,Source.,Account.,Period.,Fiscal Year.,,
+BU.,Source.,Account.,Period.,Fiscal Year.,MMC11.MMC11,MMC11 Exceptions.MMC11
 204,Reporting,REV_TOT,Apr,FY15,,
 204,Reporting,PLLAB001,Apr,FY15,,
 204,Reporting,PLLAB002,Apr,FY15,,
