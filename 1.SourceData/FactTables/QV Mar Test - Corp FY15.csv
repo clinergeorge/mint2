@@ -7,7 +7,7 @@ TOTCCX,,,,,,,,,,,,
 ,,,,,Actuals.,Actual Exceptions.,Budget.,Budget Exceptions.,Latest Fcst.,Latest Fcst Exceptions.,MMC Working.,MMC Working Exceptions.
 ,,,,,Actual_CY_BR,Actual_CY_BR_Exceptions,Budget_CY_BR,Budget_CY_BR_Exceptions,LatestFcst_CY_BR,LatestFcst_CY_BR_Exceptions,MMC_CY_BR,MMC_CY_BR_Exceptions
 ,,,,,Final,Final,Final,Final,OpCo Review,OpCo Review,Working,Working
-BU.,Source.,Account.,Period.,Fiscal Year.,,,,,,,,
+BU.,Source.,Account.,Period.,Fiscal Year.,Actuals.Final,Actual Exceptions.Final,Budget.Final,Budget Exceptions.Final,Latest Fcst.OpCo Review,Latest Fcst Exceptions.OpCo Review,MMC Working.Working,MMC Working Exceptions.Working
 113,Reporting,REV_TOT,Apr,FY15,,,,,,,,
 113,Reporting,PLLAB001,Apr,FY15,16419,,,,16418.82,,16418.82,
 113,Reporting,PLLAB002,Apr,FY15,,,,,,,,
