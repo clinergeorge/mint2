@@ -1,3 +1,0 @@
-Testing a push
-Entry on GC branch
-Added a new entry
