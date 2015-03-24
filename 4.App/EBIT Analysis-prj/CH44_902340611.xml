@@ -226,7 +226,9 @@
   <_ExpressionDatas>
     <ExpressionData>
       <Definition>
-        <v>Sum({&lt;  FiscalYear={$(vPriFY)}, Scenario={'Actual'}, [Measure Version]={'Final'} &gt;} Amount) - Sum({&lt;  FiscalYear={$(vPriFY)}, Scenario={'Actual'}, [Measure Version]={'Final'} &gt;} Exceptions)
+        <v>Sum({&lt; FiscalMonthYear=, FiscalMonth=, FiscalQuarter=, FiscalYear={$(vPriFY)}, Scenario={'Actual'}, [Measure Version]={'Final'} &gt;} Amount) 
+- 
+Sum({&lt; FiscalMonthYear=, FiscalMonth=, FiscalQuarter=, FiscalYear={$(vPriFY)}, Scenario={'Actual'}, [Measure Version]={'Final'} &gt;} Exceptions)
 
 //Sum({&lt;[Measure Version]={Final}, Scenario={Actual}, FiscalYear={$(vPriFY)}&gt;} Amount) - Sum({&lt;[Measure Version]={Final}, Scenario={Actual}, FiscalYear={$(vPriFY)}&gt;} Exceptions)</v>
       </Definition>
@@ -252,7 +254,9 @@
     </ExpressionData>
     <ExpressionData>
       <Definition>
-        <v>Sum({&lt;  FiscalYear={$(vCurFY)}, Scenario={'Actual'}, [Measure Version]={'Final'} &gt;} Amount) - Sum({&lt;  FiscalYear={$(vCurFY)}, Scenario={'Actual'}, [Measure Version]={'Final'} &gt;} Exceptions)
+        <v>Sum({&lt; FiscalMonthYear=, FiscalMonth=, FiscalQuarter=, FiscalYear={$(vCurFY)}, Scenario={'Actual'}, [Measure Version]={'Final'} &gt;} Amount) 
+- 
+Sum({&lt; FiscalMonthYear=, FiscalMonth=, FiscalQuarter=, FiscalYear={$(vCurFY)}, Scenario={'Actual'}, [Measure Version]={'Final'} &gt;} Exceptions)
 
 
 //Sum({&lt;[Measure Version]={Final}, Scenario={Budget}, FiscalYear={$(vCurFY)}&gt;} Amount) - Sum({&lt;[Measure Version]={Final}, Scenario={Budget}, FiscalYear={$(vCurFY)}&gt;} Exceptions)</v>
@@ -279,7 +283,9 @@
     </ExpressionData>
     <ExpressionData>
       <Definition>
-        <v> Sum({&lt; [Measure Version]={Final}, Scenario={Budget}, FiscalYear={$(vCurFY)} &gt;} Amount) - Sum({&lt; [Measure Version]={Final}, Scenario={Budget}, FiscalYear={$(vCurFY)} &gt;} Exceptions)</v>
+        <v> Sum({&lt; FiscalMonthYear=, FiscalMonth=, FiscalQuarter=,FiscalMonthYear=, FiscalMonth=, FiscalQuarter=, [Measure Version]={Final}, Scenario={Budget}, FiscalYear={$(vCurFY)} &gt;} Amount) 
+ - 
+ Sum({&lt; FiscalMonthYear=, FiscalMonth=, FiscalQuarter=, [Measure Version]={Final}, Scenario={Budget}, FiscalYear={$(vCurFY)} &gt;} Exceptions)</v>
       </Definition>
       <Enable>true</Enable>
       <Present>false</Present>
@@ -303,7 +309,9 @@
     </ExpressionData>
     <ExpressionData>
       <Definition>
-        <v> Sum({&lt; [Measure Version]={MMC11}, Scenario={MMC}, FiscalYear={$(vCurFY)} &gt;} Amount) - Sum({&lt; [Measure Version]={MMC11}, Scenario={MMC}, FiscalYear={$(vCurFY)} &gt;} Exceptions)</v>
+        <v> Sum({&lt; FiscalMonthYear=, FiscalMonth=, FiscalQuarter=, [Measure Version]={MMC11}, Scenario={MMC}, FiscalYear={$(vCurFY)} &gt;} Amount) 
+ - 
+ Sum({&lt; FiscalMonthYear=, FiscalMonth=, FiscalQuarter=, [Measure Version]={MMC11}, Scenario={MMC}, FiscalYear={$(vCurFY)} &gt;} Exceptions)</v>
       </Definition>
       <Enable>true</Enable>
       <Present>false</Present>
@@ -2109,7 +2117,7 @@
     <SheetPrintDrawBackGround>false</SheetPrintDrawBackGround>
     <StrDevModeExtra></StrDevModeExtra>
   </PrintSettings>
-  <ActivePropertyPage>0</ActivePropertyPage>
+  <ActivePropertyPage>3</ActivePropertyPage>
   <DoctorSpecial>0</DoctorSpecial>
   <DoctorMapField></DoctorMapField>
   <Detached>false</Detached>
@@ -3938,7 +3946,9 @@
           <InternalId>-1</InternalId>
           <ExpressionData>
             <Definition>
-              <v>Sum({&lt;  FiscalYear={$(vPriFY)}, Scenario={'Actual'}, [Measure Version]={'Final'} &gt;} Amount) - Sum({&lt;  FiscalYear={$(vPriFY)}, Scenario={'Actual'}, [Measure Version]={'Final'} &gt;} Exceptions)
+              <v>Sum({&lt; FiscalMonthYear=, FiscalMonth=, FiscalQuarter=, FiscalYear={$(vPriFY)}, Scenario={'Actual'}, [Measure Version]={'Final'} &gt;} Amount) 
+- 
+Sum({&lt; FiscalMonthYear=, FiscalMonth=, FiscalQuarter=, FiscalYear={$(vPriFY)}, Scenario={'Actual'}, [Measure Version]={'Final'} &gt;} Exceptions)
 
 //Sum({&lt;[Measure Version]={Final}, Scenario={Actual}, FiscalYear={$(vPriFY)}&gt;} Amount) - Sum({&lt;[Measure Version]={Final}, Scenario={Actual}, FiscalYear={$(vPriFY)}&gt;} Exceptions)</v>
             </Definition>
@@ -4428,7 +4438,9 @@
           <InternalId>-1</InternalId>
           <ExpressionData>
             <Definition>
-              <v>Sum({&lt;  FiscalYear={$(vCurFY)}, Scenario={'Actual'}, [Measure Version]={'Final'} &gt;} Amount) - Sum({&lt;  FiscalYear={$(vCurFY)}, Scenario={'Actual'}, [Measure Version]={'Final'} &gt;} Exceptions)
+              <v>Sum({&lt; FiscalMonthYear=, FiscalMonth=, FiscalQuarter=, FiscalYear={$(vCurFY)}, Scenario={'Actual'}, [Measure Version]={'Final'} &gt;} Amount) 
+- 
+Sum({&lt; FiscalMonthYear=, FiscalMonth=, FiscalQuarter=, FiscalYear={$(vCurFY)}, Scenario={'Actual'}, [Measure Version]={'Final'} &gt;} Exceptions)
 
 
 //Sum({&lt;[Measure Version]={Final}, Scenario={Budget}, FiscalYear={$(vCurFY)}&gt;} Amount) - Sum({&lt;[Measure Version]={Final}, Scenario={Budget}, FiscalYear={$(vCurFY)}&gt;} Exceptions)</v>
@@ -4919,7 +4931,9 @@
           <InternalId>-1</InternalId>
           <ExpressionData>
             <Definition>
-              <v> Sum({&lt; [Measure Version]={Final}, Scenario={Budget}, FiscalYear={$(vCurFY)} &gt;} Amount) - Sum({&lt; [Measure Version]={Final}, Scenario={Budget}, FiscalYear={$(vCurFY)} &gt;} Exceptions)</v>
+              <v> Sum({&lt; FiscalMonthYear=, FiscalMonth=, FiscalQuarter=,FiscalMonthYear=, FiscalMonth=, FiscalQuarter=, [Measure Version]={Final}, Scenario={Budget}, FiscalYear={$(vCurFY)} &gt;} Amount) 
+ - 
+ Sum({&lt; FiscalMonthYear=, FiscalMonth=, FiscalQuarter=, [Measure Version]={Final}, Scenario={Budget}, FiscalYear={$(vCurFY)} &gt;} Exceptions)</v>
             </Definition>
             <Enable>true</Enable>
             <Present>false</Present>
@@ -5407,7 +5421,9 @@
           <InternalId>-1</InternalId>
           <ExpressionData>
             <Definition>
-              <v> Sum({&lt; [Measure Version]={MMC11}, Scenario={MMC}, FiscalYear={$(vCurFY)} &gt;} Amount) - Sum({&lt; [Measure Version]={MMC11}, Scenario={MMC}, FiscalYear={$(vCurFY)} &gt;} Exceptions)</v>
+              <v> Sum({&lt; FiscalMonthYear=, FiscalMonth=, FiscalQuarter=, [Measure Version]={MMC11}, Scenario={MMC}, FiscalYear={$(vCurFY)} &gt;} Amount) 
+ - 
+ Sum({&lt; FiscalMonthYear=, FiscalMonth=, FiscalQuarter=, [Measure Version]={MMC11}, Scenario={MMC}, FiscalYear={$(vCurFY)} &gt;} Exceptions)</v>
             </Definition>
             <Enable>true</Enable>
             <Present>false</Present>

@@ -349,7 +349,7 @@ SET vFiscalOffset = 4;
 LET vMinDate      = Num(MakeDate(2012, 4, 30)); // To-do: change to a dynamic set of start and end dates.
 LET vMaxDate      = Num(MakeDate(2015, 3, 31)); 
 LET vCurrPeriod   = Num(MakeDate(2014, 8, 31));
-LET vCurrentFiscalYear = 2015; //Revew to see where this value is used
+//LET vCurrentFiscalYear = 2015; //Revew to see where this value is used
 
 //Wwe are assuming that the last completed financial period was Feb 2014 
 LET vPriorPeriod = Num(AddMonths(Date($(vCurrPeriod)), -1));

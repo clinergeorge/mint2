@@ -1,4 +1,5 @@
-﻿<ListBoxProperties>
+﻿<InputBoxProperties>
+  <PropChanged>false</PropChanged>
   <Layout>
     <Frame>
       <BorderWidth>4</BorderWidth>
@@ -10,9 +11,9 @@
         <FillPattern>COLORAREA_PATTERN1</FillPattern>
         <PrimaryCol>
           <Col>
-            <Red>192</Red>
-            <Green>192</Green>
-            <Blue>192</Blue>
+            <Red>4</Red>
+            <Green>108</Green>
+            <Blue>193</Blue>
             <Alpha>255</Alpha>
           </Col>
           <IsCalculated>false</IsCalculated>
@@ -22,7 +23,7 @@
         <Alpha>255</Alpha>
       </Color>
       <Font>
-        <FontName>@Arial Unicode MS</FontName>
+        <FontName>Tahoma</FontName>
         <PointSize1000>8000</PointSize1000>
         <Underline>false</Underline>
         <Bold>false</Bold>
@@ -30,27 +31,25 @@
         <DropShadow>false</DropShadow>
       </Font>
       <CaptionFont>
-        <FontName>Calibri</FontName>
-        <PointSize1000>12000</PointSize1000>
+        <FontName>Tahoma</FontName>
+        <PointSize1000>10000</PointSize1000>
         <Underline>false</Underline>
-        <Bold>false</Bold>
+        <Bold>true</Bold>
         <Italic>false</Italic>
         <DropShadow>false</DropShadow>
       </CaptionFont>
-      <Name>
-        <v>Account Hierarchy</v>
-      </Name>
+      <Name></Name>
       <Bmp enctype="base64"></Bmp>
       <BmpMode>0</BmpMode>
       <Detached>false</Detached>
-      <AllowMinimize>false</AllowMinimize>
+      <AllowMinimize>true</AllowMinimize>
       <AutoMinimize>false</AutoMinimize>
       <AllowMaximize>false</AllowMaximize>
       <AllowInfo>true</AllowInfo>
       <PrintIcon>false</PrintIcon>
       <CopyIcon>false</CopyIcon>
       <XLIcon>false</XLIcon>
-      <SearchIcon>true</SearchIcon>
+      <SearchIcon>false</SearchIcon>
       <SelectPossibleIcon>false</SelectPossibleIcon>
       <SelectExcludedIcon>false</SelectExcludedIcon>
       <SelectAllIcon>false</SelectAllIcon>
@@ -59,7 +58,7 @@
       <LockIcon>false</LockIcon>
       <HelpText></HelpText>
       <ObjectId></ObjectId>
-      <ShrinkFrameToData>false</ShrinkFrameToData>
+      <ShrinkFrameToData>true</ShrinkFrameToData>
       <ShowCaption>true</ShowCaption>
       <MultiLine>0</MultiLine>
       <ActiveBgColor>
@@ -69,9 +68,9 @@
         <FillPattern>COLORAREA_PATTERN1</FillPattern>
         <PrimaryCol>
           <Col>
-            <Red>235</Red>
-            <Green>235</Green>
-            <Blue>235</Blue>
+            <Red>210</Red>
+            <Green>210</Green>
+            <Blue>210</Blue>
             <Alpha>255</Alpha>
           </Col>
           <IsCalculated>false</IsCalculated>
@@ -156,7 +155,7 @@
       <FixCornerSize>21</FixCornerSize>
       <RelCornerSize>4059000000000000</RelCornerSize>
       <Power>4000000000000000</Power>
-      <RoundedShape>false</RoundedShape>
+      <RoundedShape>true</RoundedShape>
       <EnableTopLeftRounded>true</EnableTopLeftRounded>
       <EnableTopRightRounded>true</EnableTopRightRounded>
       <EnableBottomLeftRounded>true</EnableBottomLeftRounded>
@@ -166,12 +165,7 @@
       <Rainbow>false</Rainbow>
       <TextAdjustHorizontal>0</TextAdjustHorizontal>
       <TextAdjustVertical>4</TextAdjustVertical>
-      <Show>
-        <Always>false</Always>
-        <Expression>
-          <v>vMenu=2</v>
-        </Expression>
-      </Show>
+      <Show></Show>
       <AllowMoveSize>true</AllowMoveSize>
       <AllowCopyClone>true</AllowCopyClone>
       <dummy></dummy>
@@ -202,7 +196,7 @@
       <AllowModify>true</AllowModify>
       <CopyImageIcon>false</CopyImageIcon>
       <PreserveScrollPosition>false</PreserveScrollPosition>
-      <ShadowIntensity>SHADOW_NONE</ShadowIntensity>
+      <ShadowIntensity>SHADOW_SOFT</ShadowIntensity>
       <OnActivateActionItems></OnActivateActionItems>
       <OnDeactivateActionItems></OnDeactivateActionItems>
       <Extension></Extension>
@@ -212,56 +206,49 @@
       <ExtendedValues></ExtendedValues>
       <StateName></StateName>
     </Frame>
+    <NoOfRows>1</NoOfRows>
+    <ColWidthLabel>300</ColWidthLabel>
+    <ColWidthDrop>42</ColWidthDrop>
+    <ColWidthData>300</ColWidthData>
+    <MemberAttributes>
+      <LInputBoxMemberAttributes>
+        <Label>
+          <v>vCurFiscalYrQt</v>
+        </Label>
+        <Name>
+          <v>vCurFiscalYrQt</v>
+        </Name>
+        <BkgColor>
+          <Mode>COLORAREA_SOLID</Mode>
+          <Luminosity>85</Luminosity>
+          <FillDirection>COLORAREA_HORZ</FillDirection>
+          <FillPattern>COLORAREA_PATTERN1</FillPattern>
+          <PrimaryCol>
+            <Col>
+              <Red>255</Red>
+              <Green>255</Green>
+              <Blue>255</Blue>
+              <Alpha>255</Alpha>
+            </Col>
+            <IsCalculated>false</IsCalculated>
+            <ColorExpr></ColorExpr>
+          </PrimaryCol>
+          <SecondaryCol></SecondaryCol>
+          <Alpha>255</Alpha>
+        </BkgColor>
+        <TextColor></TextColor>
+        <TextAdjust>0</TextAdjust>
+      </LInputBoxMemberAttributes>
+    </MemberAttributes>
     <ReadOnly>false</ReadOnly>
-    <NumAdjust>2</NumAdjust>
-    <TextAdjust>0</TextAdjust>
-    <MultiLine>0</MultiLine>
-    <ShowFrequency>false</ShowFrequency>
-    <FrequencyInPercent>false</FrequencyInPercent>
-    <Longest></Longest>
-    <Borders>
-      <Top></Top>
-      <Bottom></Bottom>
-      <Left>
-        <LineStyle>32</LineStyle>
-        <Color></Color>
-        <ExtraBorderSpace16>0</ExtraBorderSpace16>
-      </Left>
-      <Right>
-        <LineStyle>32</LineStyle>
-        <Color></Color>
-        <ExtraBorderSpace16>0</ExtraBorderSpace16>
-      </Right>
-    </Borders>
-    <MultiColumn>false</MultiColumn>
-    <OrderByRow>false</OrderByRow>
-    <HideExcluded>false</HideExcluded>
-    <SelectionStyle>SS_USER_PREF</SelectionStyle>
-    <ImageRepresentation></ImageRepresentation>
-    <SoftLock>false</SoftLock>
-    <ExcludedValuesMode>0</ExcludedValuesMode>
-    <DefaultSearchMode>0</DefaultSearchMode>
-    <SuppressHorizontalScroll>false</SuppressHorizontalScroll>
-    <FixedColumnsCount>-1</FixedColumnsCount>
-    <LayoutDependentPrint>true</LayoutDependentPrint>
-    <PrintAllValues>false</PrintAllValues>
-    <HierarchySeparator>~</HierarchySeparator>
-    <ShowAsTreeView>true</ShowAsTreeView>
-    <CurrentInfoURL></CurrentInfoURL>
-    <SuppressSearchHighlight>false</SuppressSearchHighlight>
-    <TextColor></TextColor>
-    <PreferredTextSearchMode>TEXT_SEARCH_NORMAL</PreferredTextSearchMode>
+    <GridStyle>false</GridStyle>
+    <ShowEqualSign>true</ShowEqualSign>
   </Layout>
-  <Def>
-    <Name>Account Hierarchy</Name>
-    <Type>PRESENT</Type>
-  </Def>
-  <Title></Title>
   <PrintSettings>
     <Landscape>true</Landscape>
-    <PrintCurrentSelectionPosition>NO_SELECTION</PrintCurrentSelectionPosition>
-    <ShowTimeStamp>false</ShowTimeStamp>
-    <ShowWindowTitle>false</ShowWindowTitle>
+    <PrintCurrentSelectionPosition>BOTTOM_OF_ALL_PAGES</PrintCurrentSelectionPosition>
+    <ShowTimeStamp>true</ShowTimeStamp>
+    <ShowWindowTitle>true</ShowWindowTitle>
     <MarginLeft>236</MarginLeft>
     <MarginTop>236</MarginTop>
     <MarginRight>236</MarginRight>
@@ -274,7 +261,7 @@
     <MarginHeader>120</MarginHeader>
     <MarginFooter>120</MarginFooter>
     <Header_Left_Font>
-      <FontName>@Arial Unicode MS</FontName>
+      <FontName>Tahoma</FontName>
       <PointSize1000>8000</PointSize1000>
       <Underline>false</Underline>
       <Bold>false</Bold>
@@ -282,7 +269,7 @@
       <DropShadow>false</DropShadow>
     </Header_Left_Font>
     <Header_Center_Font>
-      <FontName>@Arial Unicode MS</FontName>
+      <FontName>Tahoma</FontName>
       <PointSize1000>8000</PointSize1000>
       <Underline>false</Underline>
       <Bold>false</Bold>
@@ -290,7 +277,7 @@
       <DropShadow>false</DropShadow>
     </Header_Center_Font>
     <Header_Right_Font>
-      <FontName>@Arial Unicode MS</FontName>
+      <FontName>Tahoma</FontName>
       <PointSize1000>8000</PointSize1000>
       <Underline>false</Underline>
       <Bold>false</Bold>
@@ -298,7 +285,7 @@
       <DropShadow>false</DropShadow>
     </Header_Right_Font>
     <Footer_Left_Font>
-      <FontName>@Arial Unicode MS</FontName>
+      <FontName>Tahoma</FontName>
       <PointSize1000>8000</PointSize1000>
       <Underline>false</Underline>
       <Bold>false</Bold>
@@ -306,7 +293,7 @@
       <DropShadow>false</DropShadow>
     </Footer_Left_Font>
     <Footer_Center_Font>
-      <FontName>@Arial Unicode MS</FontName>
+      <FontName>Tahoma</FontName>
       <PointSize1000>8000</PointSize1000>
       <Underline>false</Underline>
       <Bold>false</Bold>
@@ -314,7 +301,7 @@
       <DropShadow>false</DropShadow>
     </Footer_Center_Font>
     <Footer_Right_Font>
-      <FontName>@Arial Unicode MS</FontName>
+      <FontName>Tahoma</FontName>
       <PointSize1000>8000</PointSize1000>
       <Underline>false</Underline>
       <Bold>false</Bold>
@@ -346,24 +333,8 @@
     <SheetPrintDrawBackGround>false</SheetPrintDrawBackGround>
     <StrDevModeExtra></StrDevModeExtra>
   </PrintSettings>
-  <SortCriteria>
-    <SortByState>0</SortByState>
-    <SortByFrequency>0</SortByFrequency>
-    <SortByNumeric>0</SortByNumeric>
-    <SortByAscii>1</SortByAscii>
-    <SortByLoadOrder>0</SortByLoadOrder>
-    <SortByExpression>0</SortByExpression>
-    <Expression></Expression>
-  </SortCriteria>
-  <NumberPresentation></NumberPresentation>
-  <ExpandedNodes>
-    <int>82</int>
-    <int>70</int>
-  </ExpandedNodes>
+  <TextAdjust>0</TextAdjust>
+  <NumAdjust>0</NumAdjust>
+  <MultiColumn>false</MultiColumn>
   <OnSelectActionItems></OnSelectActionItems>
-  <SuppressAutoSortByState>false</SuppressAutoSortByState>
-  <Expressions></Expressions>
-  <NullSymbol>-</NullSymbol>
-  <MissingSymbol>-</MissingSymbol>
-  <MoreSearchSettings></MoreSearchSettings>
-</ListBoxProperties>
+</InputBoxProperties>
