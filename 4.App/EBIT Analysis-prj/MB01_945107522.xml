@@ -1,6 +1,6 @@
 ﻿<MultiBoxProperties>
   <Layout>
-    <NoOfRows>5</NoOfRows>
+    <NoOfRows>3</NoOfRows>
     <MaxNoOfRowsDropDown>10</MaxNoOfRowsDropDown>
     <ColWidthLabel>300</ColWidthLabel>
     <ColWidthDrop>42</ColWidthDrop>
@@ -340,78 +340,6 @@
   <NumAdjust>2</NumAdjust>
   <SortByApplicability>false</SortByApplicability>
   <MemberAttributes>
-    <MultiBoxMemberAttributes>
-      <Label></Label>
-      <FieldDef>
-        <Name>Account1</Name>
-        <Type>PRESENT</Type>
-      </FieldDef>
-      <SortCriteria>
-        <SortByState>1</SortByState>
-        <SortByFrequency>0</SortByFrequency>
-        <SortByNumeric>0</SortByNumeric>
-        <SortByAscii>1</SortByAscii>
-        <SortByLoadOrder>0</SortByLoadOrder>
-        <SortByExpression>0</SortByExpression>
-        <Expression></Expression>
-      </SortCriteria>
-      <ShowFrequency>false</ShowFrequency>
-      <FrequencyInPercent>false</FrequencyInPercent>
-      <HideExcluded>false</HideExcluded>
-      <ReadOnly>false</ReadOnly>
-      <IgnoreNull>false</IgnoreNull>
-      <NumAdjust>2</NumAdjust>
-      <TextAdjust>0</TextAdjust>
-      <MultiColumn>false</MultiColumn>
-      <OrderByRow>false</OrderByRow>
-      <MultiLine>0</MultiLine>
-      <ShowBorder>true</ShowBorder>
-      <SelectionStyle>SS_USER_PREF</SelectionStyle>
-      <ImageRepresentation></ImageRepresentation>
-      <SoftLock>false</SoftLock>
-      <ExcludedValuesMode>0</ExcludedValuesMode>
-      <DefaultSearchMode>0</DefaultSearchMode>
-      <NumberPresentation></NumberPresentation>
-      <SuppressHorizontalScroll>false</SuppressHorizontalScroll>
-      <SuppressAutoSortByState>false</SuppressAutoSortByState>
-      <PreferredTextSearchMode>TEXT_SEARCH_NONE</PreferredTextSearchMode>
-    </MultiBoxMemberAttributes>
-    <MultiBoxMemberAttributes>
-      <Label></Label>
-      <FieldDef>
-        <Name>Account</Name>
-        <Type>PRESENT</Type>
-      </FieldDef>
-      <SortCriteria>
-        <SortByState>1</SortByState>
-        <SortByFrequency>0</SortByFrequency>
-        <SortByNumeric>0</SortByNumeric>
-        <SortByAscii>1</SortByAscii>
-        <SortByLoadOrder>0</SortByLoadOrder>
-        <SortByExpression>0</SortByExpression>
-        <Expression></Expression>
-      </SortCriteria>
-      <ShowFrequency>false</ShowFrequency>
-      <FrequencyInPercent>false</FrequencyInPercent>
-      <HideExcluded>false</HideExcluded>
-      <ReadOnly>false</ReadOnly>
-      <IgnoreNull>false</IgnoreNull>
-      <NumAdjust>2</NumAdjust>
-      <TextAdjust>0</TextAdjust>
-      <MultiColumn>false</MultiColumn>
-      <OrderByRow>false</OrderByRow>
-      <MultiLine>0</MultiLine>
-      <ShowBorder>true</ShowBorder>
-      <SelectionStyle>SS_USER_PREF</SelectionStyle>
-      <ImageRepresentation></ImageRepresentation>
-      <SoftLock>false</SoftLock>
-      <ExcludedValuesMode>0</ExcludedValuesMode>
-      <DefaultSearchMode>0</DefaultSearchMode>
-      <NumberPresentation></NumberPresentation>
-      <SuppressHorizontalScroll>false</SuppressHorizontalScroll>
-      <SuppressAutoSortByState>false</SuppressAutoSortByState>
-      <PreferredTextSearchMode>TEXT_SEARCH_NONE</PreferredTextSearchMode>
-    </MultiBoxMemberAttributes>
     <MultiBoxMemberAttributes>
       <Label></Label>
       <FieldDef>

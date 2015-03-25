@@ -246,7 +246,7 @@
     <Bmp enctype="base64"></Bmp>
     <BkgAlpha>255</BkgAlpha>
     <Text>
-      <v>Costs and ULG ignore time selections at any grain lower than a year.</v>
+      <v>=Sum(Amount)</v>
     </Text>
     <ImageRepresentation></ImageRepresentation>
     <AllowVerticalScrollBar>false</AllowVerticalScrollBar>

@@ -211,13 +211,14 @@
     <FastChange></FastChange>
     <WindowTitle></WindowTitle>
     <GraphMode>GRAPH_MODE_BAR</GraphMode>
+    <TotalString></TotalString>
     <ErrorMessageOverrides></ErrorMessageOverrides>
     <MiniChartLook>false</MiniChartLook>
   </GraphLayout>
   <_ExpressionDatas>
     <ExpressionData>
       <Definition>
-        <v> Sum({&lt; FiscalYear={$(vCurrentFiscalYear)}, Scenario={'Actual'} &gt;} Amount)  /1000000</v>
+        <v> Sum({&lt; FiscalMonthYear=, FiscalMonth=, FiscalQuarter=, FiscalYear={$(vCurrentFiscalYear)}, Scenario={'Actual'} &gt;} Amount)/1000000</v>
       </Definition>
       <Enable>true</Enable>
       <Present>false</Present>
@@ -241,7 +242,7 @@
     </ExpressionData>
     <ExpressionData>
       <Definition>
-        <v> Sum({&lt; FiscalYear={$(vCurrentFiscalYear)}, Scenario={'Budget'} &gt;} Amount)  /1000000</v>
+        <v> Sum({&lt; FiscalMonthYear=, FiscalMonth=, FiscalQuarter=, FiscalYear={$(vCurrentFiscalYear)}, Scenario={'Budget'} &gt;} Amount)/1000000</v>
       </Definition>
       <Enable>true</Enable>
       <Present>false</Present>
@@ -1289,7 +1290,6 @@
     <SheetPrintDrawBackGround>false</SheetPrintDrawBackGround>
     <StrDevModeExtra></StrDevModeExtra>
   </PrintSettings>
-  <ActivePropertyPage>3</ActivePropertyPage>
   <DoctorSpecial>0</DoctorSpecial>
   <DoctorMapField></DoctorMapField>
   <Detached>false</Detached>
@@ -1529,7 +1529,7 @@
       <RelativePositionType>0</RelativePositionType>
       <Show>true</Show>
       <ShowNumbers>false</ShowNumbers>
-      <DockedPosition>POSITION_RIGHT</DockedPosition>
+      <DockedPosition>POSITION_BOTTOM</DockedPosition>
       <BgColor>
         <Mode>COLORAREA_SOLID</Mode>
         <Luminosity>85</Luminosity>
@@ -2424,6 +2424,9 @@
     <DynamicImage></DynamicImage>
     <TrellisProperties></TrellisProperties>
     <MekkoChartMode>MEKKOCHART_NORMALIZED</MekkoChartMode>
+    <TruncateLabel>true</TruncateLabel>
+    <ScaleChartSizeRects></ScaleChartSizeRects>
+    <FastChangeRefSizeRect></FastChangeRefSizeRect>
   </ChartProperties>
   <TableProperties>
     <VerticalLabels>false</VerticalLabels>
@@ -2977,7 +2980,7 @@
           <InternalId>-1</InternalId>
           <ExpressionData>
             <Definition>
-              <v> Sum({&lt; FiscalYear={$(vCurrentFiscalYear)}, Scenario={'Actual'} &gt;} Amount)  /1000000</v>
+              <v> Sum({&lt; FiscalMonthYear=, FiscalMonth=, FiscalQuarter=, FiscalYear={$(vCurrentFiscalYear)}, Scenario={'Actual'} &gt;} Amount)/1000000</v>
             </Definition>
             <Enable>true</Enable>
             <Present>false</Present>
@@ -3458,7 +3461,7 @@
           <InternalId>-1</InternalId>
           <ExpressionData>
             <Definition>
-              <v> Sum({&lt; FiscalYear={$(vCurrentFiscalYear)}, Scenario={'Budget'} &gt;} Amount)  /1000000</v>
+              <v> Sum({&lt; FiscalMonthYear=, FiscalMonth=, FiscalQuarter=, FiscalYear={$(vCurrentFiscalYear)}, Scenario={'Budget'} &gt;} Amount)/1000000</v>
             </Definition>
             <Enable>true</Enable>
             <Present>false</Present>

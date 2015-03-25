@@ -211,6 +211,7 @@
     <FastChange></FastChange>
     <WindowTitle></WindowTitle>
     <GraphMode>GRAPH_MODE_BAR</GraphMode>
+    <TotalString></TotalString>
     <ErrorMessageOverrides></ErrorMessageOverrides>
     <MiniChartLook>false</MiniChartLook>
   </GraphLayout>
@@ -218,8 +219,15 @@
     <ExpressionData>
       <Definition>
         <v>If(FiscalYearQuarter&lt;$(vCurFiscalYrQt),
-   ($(eNetRevenue) / Above($(eRevenue),4))  -1,
+   ($(eNetRevenue) / Above($(eRevenue),4))-1,
    Null())
+
+
+//***  eNetRevenue = Sum({&lt; [Measure Version]={Final}, Scenario={Actual}, Account1={Revenue} &gt;} Amount)
+
+//*** eRevenue = If(FiscalYear&lt;'$(vCurrentFiscalYear)',
+//     Sum({&lt;[Measure Version]={Final}, Scenario={Actual}, Account1={Revenue}&gt;} Amount),
+//     Sum({&lt;[Measure Version]={Working}, Scenario={MMC}, Account1={Revenue}&gt;} Amount))
 </v>
       </Definition>
       <Enable>true</Enable>
@@ -1301,7 +1309,6 @@
     <SheetPrintDrawBackGround>false</SheetPrintDrawBackGround>
     <StrDevModeExtra></StrDevModeExtra>
   </PrintSettings>
-  <ActivePropertyPage>3</ActivePropertyPage>
   <DoctorSpecial>0</DoctorSpecial>
   <DoctorMapField></DoctorMapField>
   <Detached>false</Detached>
@@ -2422,6 +2429,9 @@
     <DynamicImage></DynamicImage>
     <TrellisProperties></TrellisProperties>
     <MekkoChartMode>MEKKOCHART_NORMALIZED</MekkoChartMode>
+    <TruncateLabel>true</TruncateLabel>
+    <ScaleChartSizeRects></ScaleChartSizeRects>
+    <FastChangeRefSizeRect></FastChangeRefSizeRect>
   </ChartProperties>
   <TableProperties>
     <VerticalLabels>false</VerticalLabels>
@@ -2976,8 +2986,15 @@
           <ExpressionData>
             <Definition>
               <v>If(FiscalYearQuarter&lt;$(vCurFiscalYrQt),
-   ($(eNetRevenue) / Above($(eRevenue),4))  -1,
+   ($(eNetRevenue) / Above($(eRevenue),4))-1,
    Null())
+
+
+//***  eNetRevenue = Sum({&lt; [Measure Version]={Final}, Scenario={Actual}, Account1={Revenue} &gt;} Amount)
+
+//*** eRevenue = If(FiscalYear&lt;'$(vCurrentFiscalYear)',
+//     Sum({&lt;[Measure Version]={Final}, Scenario={Actual}, Account1={Revenue}&gt;} Amount),
+//     Sum({&lt;[Measure Version]={Working}, Scenario={MMC}, Account1={Revenue}&gt;} Amount))
 </v>
             </Definition>
             <Enable>true</Enable>

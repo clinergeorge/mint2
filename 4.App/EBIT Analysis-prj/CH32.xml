@@ -213,6 +213,7 @@
       <v>By BU</v>
     </WindowTitle>
     <GraphMode>GRAPH_MODE_PIVOTTABLE</GraphMode>
+    <TotalString></TotalString>
     <ErrorMessageOverrides></ErrorMessageOverrides>
     <MiniChartLook>false</MiniChartLook>
   </GraphLayout>
@@ -740,196 +741,15 @@ if(GetSelectedCount(FiscalYear)=1 and GetSelectedCount(FiscalQuarter)=1 and GetS
   <Dimensions>
     <ChartDimensionDataDef>
       <PseudoDef>
-        <Name>BU1</Name>
-        <Type>NOT_PRESENT</Type>
+        <Name>Node1</Name>
+        <Type>PRESENT</Type>
       </PseudoDef>
-      <Title></Title>
+      <Title>
+        <v>BU1</v>
+      </Title>
       <TotalString></TotalString>
       <SortCriteria>
-        <SortByState>1</SortByState>
-        <SortByFrequency>0</SortByFrequency>
-        <SortByNumeric>0</SortByNumeric>
-        <SortByAscii>0</SortByAscii>
-        <SortByLoadOrder>0</SortByLoadOrder>
-        <SortByExpression>0</SortByExpression>
-        <Expression></Expression>
-      </SortCriteria>
-      <ShowAll>false</ShowAll>
-      <ShowLabel>true</ShowLabel>
-      <ShowLegend>true</ShowLegend>
-      <NullSuppression>false</NullSuppression>
-      <ShowPartialSums>0</ShowPartialSums>
-      <LabelAdjust>0</LabelAdjust>
-      <LabelVerticalAdjust>4</LabelVerticalAdjust>
-      <TextAdjust>0</TextAdjust>
-      <NumAdjust>2</NumAdjust>
-      <VerticalAdjust>4</VerticalAdjust>
-      <DimCellVariations>
-        <CellVariationDef>
-          <PreMinorBorder>
-            <LineStyle>32</LineStyle>
-            <Color>
-              <Col>
-                <Red>220</Red>
-                <Green>220</Green>
-                <Blue>220</Blue>
-                <Alpha>255</Alpha>
-              </Col>
-              <IsCalculated>false</IsCalculated>
-              <ColorExpr></ColorExpr>
-            </Color>
-            <ExtraBorderSpace16>0</ExtraBorderSpace16>
-          </PreMinorBorder>
-          <PostMinorBorder>
-            <LineStyle>32</LineStyle>
-            <Color>
-              <Col>
-                <Red>220</Red>
-                <Green>220</Green>
-                <Blue>220</Blue>
-                <Alpha>255</Alpha>
-              </Col>
-              <IsCalculated>false</IsCalculated>
-              <ColorExpr></ColorExpr>
-            </Color>
-            <ExtraBorderSpace16>0</ExtraBorderSpace16>
-          </PostMinorBorder>
-          <MajorBorder>
-            <LineStyle>32</LineStyle>
-            <Color>
-              <Col>
-                <Red>220</Red>
-                <Green>220</Green>
-                <Blue>220</Blue>
-                <Alpha>255</Alpha>
-              </Col>
-              <IsCalculated>false</IsCalculated>
-              <ColorExpr></ColorExpr>
-            </Color>
-            <ExtraBorderSpace16>0</ExtraBorderSpace16>
-          </MajorBorder>
-          <PreTotalBorder>
-            <LineStyle>32</LineStyle>
-            <Color>
-              <Col>
-                <Red>220</Red>
-                <Green>220</Green>
-                <Blue>220</Blue>
-                <Alpha>255</Alpha>
-              </Col>
-              <IsCalculated>false</IsCalculated>
-              <ColorExpr></ColorExpr>
-            </Color>
-            <ExtraBorderSpace16>0</ExtraBorderSpace16>
-          </PreTotalBorder>
-          <PostTotalBorder>
-            <LineStyle>32</LineStyle>
-            <Color>
-              <Col>
-                <Red>220</Red>
-                <Green>220</Green>
-                <Blue>220</Blue>
-                <Alpha>255</Alpha>
-              </Col>
-              <IsCalculated>false</IsCalculated>
-              <ColorExpr></ColorExpr>
-            </Color>
-            <ExtraBorderSpace16>0</ExtraBorderSpace16>
-          </PostTotalBorder>
-          <SizeMod>0</SizeMod>
-          <StyleMod>FONTSTYLE_REGULAR</StyleMod>
-          <TotalSizeMod>0</TotalSizeMod>
-          <TotalStyleMod>FONTSTYLE_BOLD</TotalStyleMod>
-          <FgColor>
-            <Col>
-              <Red>54</Red>
-              <Green>54</Green>
-              <Blue>54</Blue>
-              <Alpha>255</Alpha>
-            </Col>
-            <IsCalculated>false</IsCalculated>
-            <ColorExpr></ColorExpr>
-          </FgColor>
-          <BgColor>
-            <Col>
-              <Red>255</Red>
-              <Green>255</Green>
-              <Blue>255</Blue>
-              <Alpha>255</Alpha>
-            </Col>
-            <IsCalculated>false</IsCalculated>
-            <ColorExpr></ColorExpr>
-          </BgColor>
-          <TotalFgColor></TotalFgColor>
-          <TotalBgColor>
-            <Col>
-              <Red>245</Red>
-              <Green>245</Green>
-              <Blue>245</Blue>
-              <Alpha>255</Alpha>
-            </Col>
-            <IsCalculated>false</IsCalculated>
-            <ColorExpr></ColorExpr>
-          </TotalBgColor>
-          <OtherSizeMod>0</OtherSizeMod>
-          <OtherStyleMod>FONTSTYLE_BOLD</OtherStyleMod>
-          <OtherFgColor></OtherFgColor>
-          <OtherBgColor>
-            <Col>
-              <Red>245</Red>
-              <Green>245</Green>
-              <Blue>245</Blue>
-              <Alpha>255</Alpha>
-            </Col>
-            <IsCalculated>false</IsCalculated>
-            <ColorExpr></ColorExpr>
-          </OtherBgColor>
-        </CellVariationDef>
-      </DimCellVariations>
-      <DropdownSelect>false</DropdownSelect>
-      <ImageRepresentation></ImageRepresentation>
-      <ExcludedValuesMode>0</ExcludedValuesMode>
-      <DefaultSearchMode>0</DefaultSearchMode>
-      <SelectionStyle>SS_USER_PREF</SelectionStyle>
-      <MaxStringLength>0</MaxStringLength>
-      <AttributeExpressions></AttributeExpressions>
-      <PageBreaks>NO_BREAKS</PageBreaks>
-      <MaxNumShown></MaxNumShown>
-      <Spacing></Spacing>
-      <ColWidth>188</ColWidth>
-      <OverrideGroupSort>false</OverrideGroupSort>
-      <Show></Show>
-      <EnableCondition></EnableCondition>
-      <Comment></Comment>
-      <OtherTotalSpec>
-        <OtherMode>OTHER_OFF</OtherMode>
-        <OtherCounted>
-          <v>10</v>
-        </OtherCounted>
-        <OtherLimit>
-          <v>0.05</v>
-        </OtherLimit>
-        <OtherLimitMode>OTHER_GT_LIMIT</OtherLimitMode>
-        <SuppressOther>false</SuppressOther>
-        <ForceBadValueKeeping>true</ForceBadValueKeeping>
-        <ApplyEvenWhenPossiblyWrongResult>true</ApplyEvenWhenPossiblyWrongResult>
-        <GlobalOtherGrouping>false</GlobalOtherGrouping>
-        <OtherCollapseInnerDimensions>false</OtherCollapseInnerDimensions>
-        <OtherSortMode>OTHER_SORT_DESCENDING</OtherSortMode>
-        <TotalMode>TOTAL_OFF</TotalMode>
-        <ReferencedExpression></ReferencedExpression>
-      </OtherTotalSpec>
-      <OtherString></OtherString>
-    </ChartDimensionDataDef>
-    <ChartDimensionDataDef>
-      <PseudoDef>
-        <Name>BU2</Name>
-        <Type>NOT_PRESENT</Type>
-      </PseudoDef>
-      <Title></Title>
-      <TotalString></TotalString>
-      <SortCriteria>
-        <SortByState>1</SortByState>
+        <SortByState>0</SortByState>
         <SortByFrequency>0</SortByFrequency>
         <SortByNumeric>0</SortByNumeric>
         <SortByAscii>1</SortByAscii>
@@ -1079,7 +899,7 @@ if(GetSelectedCount(FiscalYear)=1 and GetSelectedCount(FiscalQuarter)=1 and GetS
       <PageBreaks>NO_BREAKS</PageBreaks>
       <MaxNumShown></MaxNumShown>
       <Spacing></Spacing>
-      <ColWidth>175</ColWidth>
+      <ColWidth>300</ColWidth>
       <OverrideGroupSort>false</OverrideGroupSort>
       <Show></Show>
       <EnableCondition></EnableCondition>
@@ -1106,13 +926,15 @@ if(GetSelectedCount(FiscalYear)=1 and GetSelectedCount(FiscalQuarter)=1 and GetS
     </ChartDimensionDataDef>
     <ChartDimensionDataDef>
       <PseudoDef>
-        <Name>BU3</Name>
-        <Type>NOT_PRESENT</Type>
+        <Name>Node2</Name>
+        <Type>PRESENT</Type>
       </PseudoDef>
-      <Title></Title>
+      <Title>
+        <v>BU2</v>
+      </Title>
       <TotalString></TotalString>
       <SortCriteria>
-        <SortByState>1</SortByState>
+        <SortByState>0</SortByState>
         <SortByFrequency>0</SortByFrequency>
         <SortByNumeric>0</SortByNumeric>
         <SortByAscii>1</SortByAscii>
@@ -1262,7 +1084,7 @@ if(GetSelectedCount(FiscalYear)=1 and GetSelectedCount(FiscalQuarter)=1 and GetS
       <PageBreaks>NO_BREAKS</PageBreaks>
       <MaxNumShown></MaxNumShown>
       <Spacing></Spacing>
-      <ColWidth>191</ColWidth>
+      <ColWidth>300</ColWidth>
       <OverrideGroupSort>false</OverrideGroupSort>
       <Show></Show>
       <EnableCondition></EnableCondition>
@@ -1289,13 +1111,15 @@ if(GetSelectedCount(FiscalYear)=1 and GetSelectedCount(FiscalQuarter)=1 and GetS
     </ChartDimensionDataDef>
     <ChartDimensionDataDef>
       <PseudoDef>
-        <Name>BU4</Name>
-        <Type>NOT_PRESENT</Type>
+        <Name>Node3</Name>
+        <Type>PRESENT</Type>
       </PseudoDef>
-      <Title></Title>
+      <Title>
+        <v>BU3</v>
+      </Title>
       <TotalString></TotalString>
       <SortCriteria>
-        <SortByState>1</SortByState>
+        <SortByState>0</SortByState>
         <SortByFrequency>0</SortByFrequency>
         <SortByNumeric>0</SortByNumeric>
         <SortByAscii>1</SortByAscii>
@@ -1445,7 +1269,7 @@ if(GetSelectedCount(FiscalYear)=1 and GetSelectedCount(FiscalQuarter)=1 and GetS
       <PageBreaks>NO_BREAKS</PageBreaks>
       <MaxNumShown></MaxNumShown>
       <Spacing></Spacing>
-      <ColWidth>409</ColWidth>
+      <ColWidth>300</ColWidth>
       <OverrideGroupSort>false</OverrideGroupSort>
       <Show></Show>
       <EnableCondition></EnableCondition>
@@ -1472,17 +1296,19 @@ if(GetSelectedCount(FiscalYear)=1 and GetSelectedCount(FiscalQuarter)=1 and GetS
     </ChartDimensionDataDef>
     <ChartDimensionDataDef>
       <PseudoDef>
-        <Name>Time</Name>
-        <Type>NOT_PRESENT</Type>
+        <Name>Node4</Name>
+        <Type>PRESENT</Type>
       </PseudoDef>
-      <Title></Title>
+      <Title>
+        <v>BU4</v>
+      </Title>
       <TotalString></TotalString>
       <SortCriteria>
-        <SortByState>1</SortByState>
+        <SortByState>0</SortByState>
         <SortByFrequency>0</SortByFrequency>
         <SortByNumeric>0</SortByNumeric>
-        <SortByAscii>0</SortByAscii>
-        <SortByLoadOrder>1</SortByLoadOrder>
+        <SortByAscii>1</SortByAscii>
+        <SortByLoadOrder>0</SortByLoadOrder>
         <SortByExpression>0</SortByExpression>
         <Expression></Expression>
       </SortCriteria>
@@ -1746,7 +1572,6 @@ if(GetSelectedCount(FiscalYear)=1 and GetSelectedCount(FiscalQuarter)=1 and GetS
     <SheetPrintDrawBackGround>false</SheetPrintDrawBackGround>
     <StrDevModeExtra></StrDevModeExtra>
   </PrintSettings>
-  <ActivePropertyPage>0</ActivePropertyPage>
   <DoctorSpecial>0</DoctorSpecial>
   <DoctorMapField></DoctorMapField>
   <Detached>false</Detached>
@@ -2801,10 +2626,17 @@ if(GetSelectedCount(FiscalYear)=1 and GetSelectedCount(FiscalQuarter)=1 and GetS
     <DynamicImage></DynamicImage>
     <TrellisProperties></TrellisProperties>
     <MekkoChartMode>MEKKOCHART_NORMALIZED</MekkoChartMode>
+    <TruncateLabel>true</TruncateLabel>
+    <ScaleChartSizeRects></ScaleChartSizeRects>
+    <FastChangeRefSizeRect></FastChangeRefSizeRect>
   </ChartProperties>
   <TableProperties>
     <VerticalLabels>false</VerticalLabels>
     <ColWidths>
+      <int>300</int>
+      <int>300</int>
+      <int>300</int>
+      <int>300</int>
       <int>403</int>
     </ColWidths>
     <Striping>
@@ -3304,7 +3136,6 @@ if(GetSelectedCount(FiscalYear)=1 and GetSelectedCount(FiscalQuarter)=1 and GetS
       <int>2</int>
       <int>3</int>
       <int>4</int>
-      <int>5</int>
       <int>0</int>
     </InterFieldSortOrder>
     <ExpressionPosition>-1</ExpressionPosition>
@@ -3338,69 +3169,13 @@ if(GetSelectedCount(FiscalYear)=1 and GetSelectedCount(FiscalQuarter)=1 and GetS
       <ExpansionData>
         <ExcludeList>false</ExcludeList>
         <Pos>
-          <DimName>BU1</DimName>
+          <DimName>Node1</DimName>
           <ElemNo>
-            <int>0</int>
-            <int>1</int>
-          </ElemNo>
-          <ElemValues>
-            <Blob>
-                BENyZWRpdCBTZXJ2aWNlcyB3L1Bhc3Nwb3J0AA==
-            </Blob>
-            <Blob>
-                BERHQQA=
-            </Blob>
-          </ElemValues>
-        </Pos>
-      </ExpansionData>
-      <ExpansionData>
-        <ExcludeList>false</ExcludeList>
-        <Pos>
-          <DimName>BU2</DimName>
-          <ElemNo>
-            <int>-2</int>
-            <int>0</int>
-            <int>1</int>
-          </ElemNo>
-          <ElemValues>
-            <Blob>
-                AA==
-            </Blob>
-            <Blob>
-                BENJUy9CSVMA
-            </Blob>
-            <Blob>
-                BFZlcnRpY2FsIE1hcmtldHMA
-            </Blob>
-          </ElemValues>
-        </Pos>
-      </ExpansionData>
-      <ExpansionData>
-        <ExcludeList>false</ExcludeList>
-        <Pos>
-          <DimName>BU3</DimName>
-          <ElemNo>
-            <int>0</int>
-            <int>1</int>
             <int>2</int>
-            <int>3</int>
-            <int>4</int>
           </ElemNo>
           <ElemValues>
             <Blob>
-                BENvbnN1bWVyIEluZm9ybWF0aW9uIFNlcnZpY2VzAA==
-            </Blob>
-            <Blob>
-                BEJ1c2luZXNzIENyZWRpdAA=
-            </Blob>
-            <Blob>
-                BEF1dG9tb3RpdmUA
-            </Blob>
-            <Blob>
-                BEhlYWx0aGNhcmUuAA==
-            </Blob>
-            <Blob>
-                BFB1YmxpYyBTZWN0b3IA
+                BEJVX0ZSQQA=
             </Blob>
           </ElemValues>
         </Pos>
@@ -3408,13 +3183,13 @@ if(GetSelectedCount(FiscalYear)=1 and GetSelectedCount(FiscalQuarter)=1 and GetS
       <ExpansionData>
         <ExcludeList>false</ExcludeList>
         <Pos>
-          <DimName>BU4</DimName>
+          <DimName>Node2</DimName>
           <ElemNo>
-            <int>1</int>
+            <int>2</int>
           </ElemNo>
           <ElemValues>
             <Blob>
-                BFBhc3Nwb3J0LgA=
+                BEJVX0ZUQwA=
             </Blob>
           </ElemValues>
         </Pos>
@@ -3422,7 +3197,15 @@ if(GetSelectedCount(FiscalYear)=1 and GetSelectedCount(FiscalQuarter)=1 and GetS
       <ExpansionData>
         <ExcludeList>false</ExcludeList>
         <Pos>
-          <DimName>Time</DimName>
+          <DimName>Node3</DimName>
+          <ElemNo></ElemNo>
+          <ElemValues></ElemValues>
+        </Pos>
+      </ExpansionData>
+      <ExpansionData>
+        <ExcludeList>false</ExcludeList>
+        <Pos>
+          <DimName>Node4</DimName>
           <ElemNo></ElemNo>
           <ElemValues></ElemValues>
         </Pos>

@@ -764,36 +764,13 @@
     <OnActivateActionItems></OnActivateActionItems>
     <OnDeactivateActionItems></OnDeactivateActionItems>
     <Extension></Extension>
-    <Background>
-      <Color>
-        <Mode>COLORAREA_SOLID</Mode>
-        <Luminosity>85</Luminosity>
-        <FillDirection>COLORAREA_HORZ</FillDirection>
-        <FillPattern>COLORAREA_PATTERN1</FillPattern>
-        <PrimaryCol>
-          <Col>
-            <Red>0</Red>
-            <Green>0</Green>
-            <Blue>0</Blue>
-            <Alpha>255</Alpha>
-          </Col>
-          <IsCalculated>false</IsCalculated>
-          <ColorExpr></ColorExpr>
-        </PrimaryCol>
-        <SecondaryCol></SecondaryCol>
-        <Alpha>255</Alpha>
-      </Color>
-      <ImageBlob enctype="base64"></ImageBlob>
-      <ImageLayout></ImageLayout>
-      <UseColor>true</UseColor>
-      <UseImage>false</UseImage>
-    </Background>
+    <Background></Background>
     <MenuIcon>false</MenuIcon>
     <ExtendedProperties></ExtendedProperties>
     <ExtendedValues></ExtendedValues>
     <StateName></StateName>
   </CaptionFrame>
-  <HasTableOriginOfFields>true</HasTableOriginOfFields>
+  <HasTableOriginOfFields>false</HasTableOriginOfFields>
   <ReloadTimeObsololete></ReloadTimeObsololete>
   <VBModulePos>-2</VBModulePos>
   <VBModuleXScrollPos>-2</VBModuleXScrollPos>
@@ -879,7 +856,7 @@
       <int>3</int>
     </InterOrder>
   </BookmarkSortOrder>
-  <ScriptTabActiveTab>6</ScriptTabActiveTab>
+  <ScriptTabActiveTab>4</ScriptTabActiveTab>
   <ModuleSystemAccessIntended>0</ModuleSystemAccessIntended>
   <InhibitAggressiveQvdCleaning>false</InhibitAggressiveQvdCleaning>
   <Alerts></Alerts>
@@ -1277,7 +1254,7 @@
       <Alpha>255</Alpha>
     </ColorAreaDef>
   </SelectionBgColor>
-  <ObjectCaptionStyle>OCS_GLASS</ObjectCaptionStyle>
+  <ObjectCaptionStyle>OCS_SIMPLIFIED_AIR</ObjectCaptionStyle>
   <DefaultTheme></DefaultTheme>
   <DisableLayoutUndo>false</DisableLayoutUndo>
   <ClientGracefulMode>CG_INDICATE</ClientGracefulMode>

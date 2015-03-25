@@ -211,13 +211,14 @@
     <FastChange></FastChange>
     <WindowTitle></WindowTitle>
     <GraphMode>GRAPH_MODE_COMBO</GraphMode>
+    <TotalString></TotalString>
     <ErrorMessageOverrides></ErrorMessageOverrides>
     <MiniChartLook>false</MiniChartLook>
   </GraphLayout>
   <_ExpressionDatas>
     <ExpressionData>
       <Definition>
-        <v>Sum({&lt; [Measure Version]={Final}, Scenario={Actual}, Account1={Revenue} &gt;} Amount)
+        <v>Sum({&lt; FiscalMonthYear=, FiscalMonth=, FiscalQuarter=, [Measure Version]={Final}, Scenario={Actual}, Account1={Revenue} &gt;} Amount)
 
 </v>
       </Definition>
@@ -243,9 +244,11 @@
     </ExpressionData>
     <ExpressionData>
       <Definition>
-        <v>Sum({&lt; [Measure Version]={Final}, Scenario={Actual}, Account1={Revenue} &gt;} Amount)
+        <v>Sum({&lt; FiscalMonthYear=, FiscalMonth=, FiscalQuarter=, [Measure Version]={Final}, Scenario={Actual}, Account1={Revenue} &gt;} Amount)
 -
-Sum({&lt;[Measure Version]={Final}, Scenario={Actual}, Account1={'Total Costs'}&gt;} Amount) - Sum({&lt;[Measure Version]={Final},   Scenario={Actual}, Account1={'Total Costs'}&gt;} Exceptions)
+Sum({&lt; FiscalMonthYear=, FiscalMonth=, FiscalQuarter=, [Measure Version]={Final}, Scenario={Actual}, Account1={'Total Costs'}&gt;} Amount) 
+- 
+Sum({&lt; FiscalMonthYear=, FiscalMonth=, FiscalQuarter=, [Measure Version]={Final},   Scenario={Actual}, Account1={'Total Costs'}&gt;} Exceptions)
 </v>
       </Definition>
       <Enable>true</Enable>
@@ -1034,7 +1037,7 @@ Sum({&lt;[Measure Version]={Final}, Scenario={Actual}, Account1={'Total Costs'}&
       <SortCriteria>
         <SortByState>0</SortByState>
         <SortByFrequency>0</SortByFrequency>
-        <SortByNumeric>-1</SortByNumeric>
+        <SortByNumeric>1</SortByNumeric>
         <SortByAscii>0</SortByAscii>
         <SortByLoadOrder>0</SortByLoadOrder>
         <SortByExpression>0</SortByExpression>
@@ -1180,7 +1183,9 @@ Sum({&lt;[Measure Version]={Final}, Scenario={Actual}, Account1={'Total Costs'}&
       <MaxStringLength>0</MaxStringLength>
       <AttributeExpressions></AttributeExpressions>
       <PageBreaks>NO_BREAKS</PageBreaks>
-      <MaxNumShown></MaxNumShown>
+      <MaxNumShown>
+        <v>24</v>
+      </MaxNumShown>
       <Spacing></Spacing>
       <ColWidth>300</ColWidth>
       <OverrideGroupSort>false</OverrideGroupSort>
@@ -1300,7 +1305,6 @@ Sum({&lt;[Measure Version]={Final}, Scenario={Actual}, Account1={'Total Costs'}&
     <SheetPrintDrawBackGround>false</SheetPrintDrawBackGround>
     <StrDevModeExtra></StrDevModeExtra>
   </PrintSettings>
-  <ActivePropertyPage>3</ActivePropertyPage>
   <DoctorSpecial>0</DoctorSpecial>
   <DoctorMapField></DoctorMapField>
   <Detached>false</Detached>
@@ -1323,7 +1327,7 @@ Sum({&lt;[Measure Version]={Final}, Scenario={Actual}, Account1={'Total Costs'}&
           <Unit></Unit>
           <kUnit></kUnit>
           <MUnit>
-            <v>$M</v>
+            <v>Rev ($M)</v>
           </MUnit>
           <GUnit></GUnit>
         </Units>
@@ -1390,7 +1394,14 @@ Sum({&lt;[Measure Version]={Final}, Scenario={Actual}, Account1={'Total Costs'}&
         <MinorStepMode>0</MinorStepMode>
       </AxisDef>
       <AxisDef>
-        <Units></Units>
+        <Units>
+          <Unit></Unit>
+          <kUnit></kUnit>
+          <MUnit>
+            <v>EBIT ($M)</v>
+          </MUnit>
+          <GUnit></GUnit>
+        </Units>
         <Backcast></Backcast>
         <Forecast></Forecast>
         <Max></Max>
@@ -1531,9 +1542,9 @@ Sum({&lt;[Measure Version]={Final}, Scenario={Actual}, Account1={'Total Costs'}&
       </Position>
       <RelativePosition></RelativePosition>
       <RelativePositionType>0</RelativePositionType>
-      <Show>false</Show>
+      <Show>true</Show>
       <ShowNumbers>false</ShowNumbers>
-      <DockedPosition>POSITION_RIGHT</DockedPosition>
+      <DockedPosition>POSITION_BOTTOM</DockedPosition>
       <BgColor>
         <Mode>COLORAREA_SOLID</Mode>
         <Luminosity>85</Luminosity>
@@ -2352,12 +2363,12 @@ Sum({&lt;[Measure Version]={Final}, Scenario={Actual}, Account1={'Total Costs'}&
     <MinorGridStyle>2</MinorGridStyle>
     <GridThickness>3</GridThickness>
     <MinorGridThickness>1</MinorGridThickness>
-    <XAxisScroll>false</XAxisScroll>
+    <XAxisScroll>true</XAxisScroll>
     <ErrorBarWidth>ERROR_BARS_MEDIUMWIDTH</ErrorBarWidth>
     <ErrorBarThickness>ERROR_BARS_THIN</ErrorBarThickness>
     <ErrorBarColor></ErrorBarColor>
     <Offset>15</Offset>
-    <XScrollInitRight>false</XScrollInitRight>
+    <XScrollInitRight>true</XScrollInitRight>
     <BlockLevels>3</BlockLevels>
     <ShowDimValueInPopup>
       <bool>false</bool>
@@ -2428,6 +2439,9 @@ Sum({&lt;[Measure Version]={Final}, Scenario={Actual}, Account1={'Total Costs'}&
     <DynamicImage></DynamicImage>
     <TrellisProperties></TrellisProperties>
     <MekkoChartMode>MEKKOCHART_NORMALIZED</MekkoChartMode>
+    <TruncateLabel>true</TruncateLabel>
+    <ScaleChartSizeRects></ScaleChartSizeRects>
+    <FastChangeRefSizeRect></FastChangeRefSizeRect>
   </ChartProperties>
   <TableProperties>
     <VerticalLabels>false</VerticalLabels>
@@ -2981,7 +2995,7 @@ Sum({&lt;[Measure Version]={Final}, Scenario={Actual}, Account1={'Total Costs'}&
           <InternalId>-1</InternalId>
           <ExpressionData>
             <Definition>
-              <v>Sum({&lt; [Measure Version]={Final}, Scenario={Actual}, Account1={Revenue} &gt;} Amount)
+              <v>Sum({&lt; FiscalMonthYear=, FiscalMonth=, FiscalQuarter=, [Measure Version]={Final}, Scenario={Actual}, Account1={Revenue} &gt;} Amount)
 
 </v>
             </Definition>
@@ -3386,7 +3400,7 @@ Sum({&lt;[Measure Version]={Final}, Scenario={Actual}, Account1={'Total Costs'}&
               <Unit></Unit>
               <kUnit></kUnit>
               <MUnit>
-                <v>$M</v>
+                <v>Rev ($M)</v>
               </MUnit>
               <GUnit></GUnit>
             </Units>
@@ -3464,9 +3478,11 @@ Sum({&lt;[Measure Version]={Final}, Scenario={Actual}, Account1={'Total Costs'}&
           <InternalId>-1</InternalId>
           <ExpressionData>
             <Definition>
-              <v>Sum({&lt; [Measure Version]={Final}, Scenario={Actual}, Account1={Revenue} &gt;} Amount)
+              <v>Sum({&lt; FiscalMonthYear=, FiscalMonth=, FiscalQuarter=, [Measure Version]={Final}, Scenario={Actual}, Account1={Revenue} &gt;} Amount)
 -
-Sum({&lt;[Measure Version]={Final}, Scenario={Actual}, Account1={'Total Costs'}&gt;} Amount) - Sum({&lt;[Measure Version]={Final},   Scenario={Actual}, Account1={'Total Costs'}&gt;} Exceptions)
+Sum({&lt; FiscalMonthYear=, FiscalMonth=, FiscalQuarter=, [Measure Version]={Final}, Scenario={Actual}, Account1={'Total Costs'}&gt;} Amount) 
+- 
+Sum({&lt; FiscalMonthYear=, FiscalMonth=, FiscalQuarter=, [Measure Version]={Final},   Scenario={Actual}, Account1={'Total Costs'}&gt;} Exceptions)
 </v>
             </Definition>
             <Enable>true</Enable>
@@ -3866,7 +3882,14 @@ Sum({&lt;[Measure Version]={Final}, Scenario={Actual}, Account1={'Total Costs'}&
             <MiniChartCellSettings></MiniChartCellSettings>
           </ExpressionVisual>
           <AxisData>
-            <Units></Units>
+            <Units>
+              <Unit></Unit>
+              <kUnit></kUnit>
+              <MUnit>
+                <v>EBIT ($M)</v>
+              </MUnit>
+              <GUnit></GUnit>
+            </Units>
             <Backcast></Backcast>
             <Forecast></Forecast>
             <Max></Max>
