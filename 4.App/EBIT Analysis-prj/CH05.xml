@@ -217,9 +217,9 @@
   <_ExpressionDatas>
     <ExpressionData>
       <Definition>
-        <v>if(Sum({&lt; FiscalMonthYear=, FiscalMonth=, FiscalQuarter=, Account2={'Total labour costs including labour recharges'}, Scenario={Actual}, [Measure Version]={Final}, FiscalYear={$(vCurrentPriorFiscalYear)} &gt;} Amount) &gt; 0,
-   Sum({&lt; FiscalMonthYear=, FiscalMonth=, FiscalQuarter=, Account2={'Total labour costs including labour recharges'}, Scenario={Actual}, [Measure Version]={Final}, FiscalYear={$(vCurrentPriorFiscalYear)} &gt;} Amount),
-   Sum({&lt; FiscalMonthYear=, FiscalMonth=, FiscalQuarter=, Account2={'Total labour costs including labour recharges'}, Scenario={Budget}, [Measure Version]={Final}, FiscalYear={$(vCurrentPriorFiscalYear)} &gt;} Amount))</v>
+        <v>if(Sum({&lt; FiscalMonthYear=, FiscalMonth=, FiscalQuarter=, _flag_prior_months={1}, Account2={'Total labour costs including labour recharges'}, Scenario={Actual}, [Measure Version]={Final}, FiscalYear={$(vCurrentPriorFiscalYear)} &gt;} Amount) &gt; 0,
+   Sum({&lt; FiscalMonthYear=, FiscalMonth=, FiscalQuarter=, _flag_prior_months={1}, Account2={'Total labour costs including labour recharges'}, Scenario={Actual}, [Measure Version]={Final}, FiscalYear={$(vCurrentPriorFiscalYear)} &gt;} Amount),
+   Sum({&lt; FiscalMonthYear=, FiscalMonth=, FiscalQuarter=, _flag_prior_months={1},Account2={'Total labour costs including labour recharges'}, Scenario={Budget}, [Measure Version]={Final}, FiscalYear={$(vCurrentPriorFiscalYear)} &gt;} Amount))</v>
       </Definition>
       <Enable>true</Enable>
       <Present>false</Present>
@@ -271,9 +271,9 @@
     </ExpressionData>
     <ExpressionData>
       <Definition>
-        <v>if(Sum({&lt; FiscalMonthYear=, FiscalMonth=, FiscalQuarter=, Account1=, Account1={Headcount}, Scenario={Actual}, [Measure Version]={Final}, FiscalYear={$(vCurrentPriorFiscalYear)} &gt;} Amount) &gt; 0,
-   Sum({&lt; FiscalMonthYear=, FiscalMonth=, FiscalQuarter=, Account1=, Account1={Headcount}, Scenario={Actual}, [Measure Version]={Final}, FiscalYear={$(vCurrentPriorFiscalYear)} &gt;} Amount),
-   Sum({&lt; FiscalMonthYear=, FiscalMonth=, FiscalQuarter=, Account1=, Account1={Headcount}, Scenario={Budget}, [Measure Version]={Final}, FiscalYear={$(vCurrentPriorFiscalYear)} &gt;} Amount))
+        <v>if(Sum({&lt; FiscalMonthYear=, FiscalMonth=, FiscalQuarter=, Account1=, _flag_prior_months={1}, Account1={Headcount}, Scenario={Actual}, [Measure Version]={Final}, FiscalYear={$(vCurrentPriorFiscalYear)} &gt;} Amount) &gt; 0,
+   Sum({&lt; FiscalMonthYear=, FiscalMonth=, FiscalQuarter=, Account1=, _flag_prior_months={1}, Account1={Headcount}, Scenario={Actual}, [Measure Version]={Final}, FiscalYear={$(vCurrentPriorFiscalYear)} &gt;} Amount),
+   Sum({&lt; FiscalMonthYear=, FiscalMonth=, FiscalQuarter=, Account1=, _flag_prior_months={1}, Account1={Headcount}, Scenario={Budget}, [Measure Version]={Final}, FiscalYear={$(vCurrentPriorFiscalYear)} &gt;} Amount))
 </v>
       </Definition>
       <Enable>true</Enable>
@@ -1438,7 +1438,7 @@
       <SortCriteria>
         <SortByState>0</SortByState>
         <SortByFrequency>0</SortByFrequency>
-        <SortByNumeric>-1</SortByNumeric>
+        <SortByNumeric>1</SortByNumeric>
         <SortByAscii>0</SortByAscii>
         <SortByLoadOrder>0</SortByLoadOrder>
         <SortByExpression>0</SortByExpression>
@@ -2008,7 +2008,7 @@
       <RelativePositionType>0</RelativePositionType>
       <Show>true</Show>
       <ShowNumbers>false</ShowNumbers>
-      <DockedPosition>POSITION_RIGHT</DockedPosition>
+      <DockedPosition>POSITION_BOTTOM</DockedPosition>
       <BgColor>
         <Mode>COLORAREA_SOLID</Mode>
         <Luminosity>85</Luminosity>
@@ -3456,9 +3456,9 @@
           <InternalId>-1</InternalId>
           <ExpressionData>
             <Definition>
-              <v>if(Sum({&lt; FiscalMonthYear=, FiscalMonth=, FiscalQuarter=, Account2={'Total labour costs including labour recharges'}, Scenario={Actual}, [Measure Version]={Final}, FiscalYear={$(vCurrentPriorFiscalYear)} &gt;} Amount) &gt; 0,
-   Sum({&lt; FiscalMonthYear=, FiscalMonth=, FiscalQuarter=, Account2={'Total labour costs including labour recharges'}, Scenario={Actual}, [Measure Version]={Final}, FiscalYear={$(vCurrentPriorFiscalYear)} &gt;} Amount),
-   Sum({&lt; FiscalMonthYear=, FiscalMonth=, FiscalQuarter=, Account2={'Total labour costs including labour recharges'}, Scenario={Budget}, [Measure Version]={Final}, FiscalYear={$(vCurrentPriorFiscalYear)} &gt;} Amount))</v>
+              <v>if(Sum({&lt; FiscalMonthYear=, FiscalMonth=, FiscalQuarter=, _flag_prior_months={1}, Account2={'Total labour costs including labour recharges'}, Scenario={Actual}, [Measure Version]={Final}, FiscalYear={$(vCurrentPriorFiscalYear)} &gt;} Amount) &gt; 0,
+   Sum({&lt; FiscalMonthYear=, FiscalMonth=, FiscalQuarter=, _flag_prior_months={1}, Account2={'Total labour costs including labour recharges'}, Scenario={Actual}, [Measure Version]={Final}, FiscalYear={$(vCurrentPriorFiscalYear)} &gt;} Amount),
+   Sum({&lt; FiscalMonthYear=, FiscalMonth=, FiscalQuarter=, _flag_prior_months={1},Account2={'Total labour costs including labour recharges'}, Scenario={Budget}, [Measure Version]={Final}, FiscalYear={$(vCurrentPriorFiscalYear)} &gt;} Amount))</v>
             </Definition>
             <Enable>true</Enable>
             <Present>false</Present>
@@ -3955,9 +3955,9 @@
           <InternalId>-1</InternalId>
           <ExpressionData>
             <Definition>
-              <v>if(Sum({&lt; FiscalMonthYear=, FiscalMonth=, FiscalQuarter=, Account1=, Account1={Headcount}, Scenario={Actual}, [Measure Version]={Final}, FiscalYear={$(vCurrentPriorFiscalYear)} &gt;} Amount) &gt; 0,
-   Sum({&lt; FiscalMonthYear=, FiscalMonth=, FiscalQuarter=, Account1=, Account1={Headcount}, Scenario={Actual}, [Measure Version]={Final}, FiscalYear={$(vCurrentPriorFiscalYear)} &gt;} Amount),
-   Sum({&lt; FiscalMonthYear=, FiscalMonth=, FiscalQuarter=, Account1=, Account1={Headcount}, Scenario={Budget}, [Measure Version]={Final}, FiscalYear={$(vCurrentPriorFiscalYear)} &gt;} Amount))
+              <v>if(Sum({&lt; FiscalMonthYear=, FiscalMonth=, FiscalQuarter=, Account1=, _flag_prior_months={1}, Account1={Headcount}, Scenario={Actual}, [Measure Version]={Final}, FiscalYear={$(vCurrentPriorFiscalYear)} &gt;} Amount) &gt; 0,
+   Sum({&lt; FiscalMonthYear=, FiscalMonth=, FiscalQuarter=, Account1=, _flag_prior_months={1}, Account1={Headcount}, Scenario={Actual}, [Measure Version]={Final}, FiscalYear={$(vCurrentPriorFiscalYear)} &gt;} Amount),
+   Sum({&lt; FiscalMonthYear=, FiscalMonth=, FiscalQuarter=, Account1=, _flag_prior_months={1}, Account1={Headcount}, Scenario={Budget}, [Measure Version]={Final}, FiscalYear={$(vCurrentPriorFiscalYear)} &gt;} Amount))
 </v>
             </Definition>
             <Enable>true</Enable>

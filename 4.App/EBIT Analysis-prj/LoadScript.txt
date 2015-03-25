@@ -64,197 +64,34 @@ ARGB(100,240,126,110) as _cLiteRedT
 AUTOGENERATE 1;
 
   
-///$tab Hackdata
-//temp:
-//CrossTable(Inputstring, Value, 2)
-//LOAD *
-//FROM
-//[..\1.SourceData\FactTables\Hackdata.csv]
-//(txt, codepage is 1252, embedded labels, delimiter is ',', msq, header is 11 lines);
-//
-//
-////to-do: refactor
-//Fact:
-//LOAD Text(BU)																										as BU_ID,
-//     Text(Account) 																									as _accountid,
-//     Inputstring, //uncomment for debugging
-//     Value, //uncomment for debugging
-//     if(Right(Subfield(Inputstring,'~',1),14) = '_BR_Exceptions', Value, Null()) 									as Exceptions,
-//     
-//     if(Right(Subfield(Inputstring,'~',1),14) <> '_BR_Exceptions', Value, Null()) 									as Amount,
-//     
-//     if(Left(Inputstring, 6) = 'Actual', 'Actual',
-//     	if(Left(Inputstring, 6) = 'Budget', 'Budget', 'MMC')) 														as Scenario,
-//     	
-//     if(Right(Subfield(Inputstring,'~',1),14) = '_BR_Exceptions', 'Y', 'N') 										as [Exceptions Flag],
-//     
-//     if(Wildmatch(Subfield(Inputstring,'~', 2), 'Final') = 1, 'Final', 
-//     	if(Wildmatch(Subfield(Inputstring,'~', 2), 'HYR') = 1, 'Working',
-//     	   if(Wildmatch(Subfield(Inputstring,'~', 2), 'MMC6') = 1, 'MMC6', Null()))) 								as [Measure Version],
-//        	   
-//     if(Mid(Inputstring,8,2) = 'CY', '20' & Right(Subfield(Inputstring,'~',3),2) & right(Inputstring, 3), 
-//   		if(Mid(Inputstring,5,2) = 'CY', '20' & Right(Subfield(Inputstring,'~',3),2) & right(Inputstring, 3),
-//   		'2014' & right(Inputstring, 3))) 																			as [MonthKey]   				
-//Resident temp
-//Where not WildMatch(Account,'PLGLOBRE','COST_TOT') //do not load; included in Excel for sense-check
-//;
-//DROP Table temp;
 ///$tab Facts
 Facts:
-LOAD BU_ID, 
-     [Account ID]     as _accountid, 
+//LOAD BU_ID, 
+//     [Account ID]     as _accountid, 
+//     MonthKey, 
+//     Source, 
+//     Scenario, 
+//     [Measure Version], 
+//     Amount, 
+//     Exceptions
+//FROM
+//[..\3.QVD\Transformed\Corp_FY13_14_Actual_Final.qvd]
+//(qvd);
+
+
+LOAD 
+	 Text(BU_ID)			as BU_ID, 
+     Text(Account_ID)		as _accountid, 
      MonthKey, 
-     Source, 
      Scenario, 
      [Measure Version], 
      Amount, 
      Exceptions
 FROM
-[..\3.QVD\Transformed\Corp_FY13_14_Actual_Final.qvd]
+[..\3.QVD\Transformed\Fact_*.qvd]
 (qvd);
 
-LOAD BU_ID, 
-     [Account ID]     as _accountid, 
-     MonthKey, 
-     Source, 
-     Scenario, 
-     [Measure Version], 
-     Amount, 
-     Exceptions
-FROM
-[..\3.QVD\Transformed\Corp_FY15_Actual_Final.qvd]
-(qvd);
-
-
-LOAD BU_ID, 
-     [Account ID]     as _accountid, 
-     MonthKey, 
-     Source, 
-     Scenario, 
-     [Measure Version], 
-     Amount, 
-     Exceptions
-FROM
-[..\3.QVD\Transformed\Corp_FY15_Budget_Final.qvd]
-(qvd);
-
-
-LOAD BU_ID, 
-     [Account ID]     as _accountid, 
-     MonthKey, 
-     Source, 
-     Scenario, 
-     [Measure Version], 
-     Amount, 
-     Exceptions
-FROM
-[..\3.QVD\Transformed\Corp_FY15_Latest_Fcast_Final.qvd]
-(qvd);
-
-
-LOAD BU_ID, 
-     [Account ID]     as _accountid, 
-     MonthKey, 
-     Source, 
-     Scenario, 
-     [Measure Version], 
-     Amount, 
-     Exceptions
-FROM
-[..\3.QVD\Transformed\Corp_FY15_MMC_MMC10.qvd]
-(qvd);
-
-
-LOAD BU_ID, 
-     [Account ID]     as _accountid, 
-     MonthKey, 
-     Source, 
-     Scenario, 
-     [Measure Version], 
-     Amount, 
-     Exceptions
-FROM
-[..\3.QVD\Transformed\Corp_FY15_MMC_MMC11.qvd]
-(qvd);
-
-
-LOAD BU_ID, 
-     [Account ID]     as _accountid, 
-     MonthKey, 
-     Source, 
-     Scenario, 
-     [Measure Version], 
-     Amount, 
-     Exceptions
-FROM
-[..\3.QVD\Transformed\ECS_FY13_14_Actual_Final.qvd]
-(qvd);
-
-
-LOAD BU_ID, 
-     [Account ID]     as _accountid, 
-     MonthKey, 
-     Source, 
-     Scenario, 
-     [Measure Version], 
-     Amount, 
-     Exceptions
-FROM
-[..\3.QVD\Transformed\ECS_FY15_Actual_Final.qvd]
-(qvd);
-
-
-LOAD BU_ID, 
-     [Account ID]     as _accountid, 
-     MonthKey, 
-     Source, 
-     Scenario, 
-     [Measure Version], 
-     Amount, 
-     Exceptions
-FROM
-[..\3.QVD\Transformed\ECS_FY15_Budget_Final.qvd]
-(qvd);
-
-
-LOAD BU_ID, 
-     [Account ID]     as _accountid, 
-     MonthKey, 
-     Source, 
-     Scenario, 
-     [Measure Version], 
-     Amount, 
-     Exceptions
-FROM
-[..\3.QVD\Transformed\ECS_FY15_Latest_Fcst_Final.qvd]
-(qvd);
-
-
-LOAD BU_ID, 
-     [Account ID]     as _accountid, 
-     MonthKey, 
-     Source, 
-     Scenario, 
-     [Measure Version], 
-     Amount, 
-     Exceptions
-FROM
-[..\3.QVD\Transformed\ECS_FY15_MMC_MMC10.qvd]
-(qvd);
-
-
-LOAD BU_ID, 
-     [Account ID]     as _accountid, 
-     MonthKey, 
-     Source, 
-     Scenario, 
-     [Measure Version], 
-     Amount, 
-     Exceptions
-FROM
-[..\3.QVD\Transformed\ECS_FY15_MMC_MMC11.qvd]
-(qvd);
-
+//EXIT Script ;
 ///$tab Business Unit
 BUBridge:
 //Hierarchy(_buid, [Parent BU], BU, BU_NodeParent, BU, [BU Hierarchy], '~', BU_NodeDepth)
@@ -335,6 +172,84 @@ Resident AccountsTemp;
 DROP Table AccountsTemp;
 
     
+///$tab Islands
+mv1:
+LOAD Distinct
+	[Measure Version]		as mv1
+Resident Facts
+Where [Measure Version]<>'Final'
+;
+
+sc1:
+LOAD Distinct
+	Scenario 				as sc1
+Resident Facts
+Where Scenario<>'MMC'
+;
+
+act1:
+LOAD * Inline
+	[
+	act1
+	Revenue
+	Cost
+	EBIT
+	Margin
+	FTE
+	]
+	;
+///$tab Fiscal Calendar
+LET vFiscalOffset = 4 ;
+
+tempcal:
+LOAD Distinct
+	MonthKey as temp
+Resident Facts
+;
+
+Calendar:
+LOAD
+	*,
+	CalMonth&'-'&CalYear						as CalMonthYear
+	;
+LOAD
+	temp											as MonthKey,
+	Dual(Month(temp),Mod(Month(temp)-$(vFiscalOffset), 12)+1)			as FiscalMonth,
+	//num(Month(temp)) 								as FiscalPeriod,
+	Mod(Month(temp)-$(vFiscalOffset), 12)+1 		as FiscalPeriod,
+	MonthName(temp) 								as FiscalMonthYear,
+	'Q' & ceil(month(temp) / 3) 					as FiscalQuarter,
+	'Q' & ceil(month(temp) / 3) &'-'&Year(temp)		as FiscalYearQuarter,
+	Year(temp)*12 + month(temp)						as FiscalPeriodID,
+	Year(temp)										as FiscalYear,
+	
+	Month(AddMonths(temp, -'$(vFiscalOffset)')) 		as CalMonth,
+    Year(addmonths(temp, -'$(vFiscalOffset)')) 			as CalYear,
+    'Q' & ceil(month(AddMonths(temp, -'$(vFiscalOffset)')) / 3) 													as CalQuarter,
+    Year(addmonths(temp, -'$(vFiscalOffset)')) & ' ' & 'Q' & ceil(month(AddMonths(temp, -'$(vFiscalOffset)'))/3) 		as CalYearQuarter,
+    
+    If(temp<MonthStart(Today()),1)					as _flag_prior_months
+Resident tempcal
+Order by temp asc
+;
+
+DROP Table tempcal ;
+
+fq:
+LOAD	
+	Num(Month(Max(MonthKey)))										as cm,
+	Num(Month(AddMonths(Max(MonthKey),-1)))							as pm,
+	Num(Month((Max(MonthKey))))										as cp,
+	'Q' & ceil(Month(Max(MonthKey))/3) &'-'& Year(Max(MonthKey))	as fq
+Resident Calendar
+;
+
+LET vCurFiscalYrQt = Peek('fq',0,'fq') ;
+LET vCurrPeriod = Peek('cp',0,'fq') ;
+LET vPriorPeriod = Peek('pm',0,'fq') ;
+LET vCurrentFiscalMonth = Peek('cm',0,'fq') ;
+///$tab Exit Script
+EXIT Script ;
 ///$tab Calendar
 //****************************************************************************************
 // This script builds a master calendar table with both fiscal and calendar based fields
@@ -393,7 +308,8 @@ LET vCurrMonthID = (year($(vCurrPeriod))*12) + month($(vCurrPeriod));
 MasterCalendar:
 LOAD
        // Required for Experian Finance POC
-       FiscalYear & FiscalMonth as MonthKey,
+       //FiscalYear & FiscalMonth as MonthKey,
+       Date(Num(FiscalMonth)&'/01/'&FiscalYear)	as MonthKey,
        FiscalMonth & Right(FiscalYear, 2) as FiscalMonthYear,
        *;
 
@@ -476,15 +392,3 @@ Resident MasterCalendar;
 
 DROP Table MasterCalendar;
 RENAME Table TempCalendar to MasterCalendar;
-///$tab Islands
-mv1:
-LOAD Distinct
-	[Measure Version]		as mv1
-Resident Facts
-;
-
-sc1:
-LOAD Distinct
-	Scenario 				as sc1
-Resident Facts
-;

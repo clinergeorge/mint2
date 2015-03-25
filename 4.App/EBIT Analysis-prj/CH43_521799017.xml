@@ -217,7 +217,7 @@
   <_ExpressionDatas>
     <ExpressionData>
       <Definition>
-        <v>Sum({&lt; FiscalMonthYear=, FiscalMonth=, FiscalQuarter=, [Measure Version]={Final}, Scenario={Actual}, Account1={Revenue} &gt;} Amount)
+        <v>Sum({&lt; FiscalMonthYear=, FiscalMonth=, FiscalQuarter=, _flag_prior_months={1},[Measure Version]={Final}, Scenario={Actual}, Account1={Revenue} &gt;} Amount)
 
 </v>
       </Definition>
@@ -243,11 +243,11 @@
     </ExpressionData>
     <ExpressionData>
       <Definition>
-        <v>Sum({&lt; FiscalMonthYear=, FiscalMonth=, FiscalQuarter=, [Measure Version]={Final}, Scenario={Actual}, Account1={Revenue} &gt;} Amount)
+        <v>Sum({&lt; FiscalMonthYear=, FiscalMonth=, FiscalQuarter=, _flag_prior_months={1}, [Measure Version]={Final}, Scenario={Actual}, Account1={Revenue} &gt;} Amount)
 -
-Sum({&lt; FiscalMonthYear=, FiscalMonth=, FiscalQuarter=, [Measure Version]={Final}, Scenario={Actual}, Account1={'Total Costs'}&gt;} Amount) 
+Sum({&lt; FiscalMonthYear=, FiscalMonth=, FiscalQuarter=, _flag_prior_months={1}, [Measure Version]={Final}, Scenario={Actual}, Account1={'Total Costs'}&gt;} Amount) 
 - 
-Sum({&lt; FiscalMonthYear=, FiscalMonth=, FiscalQuarter=, [Measure Version]={Final},   Scenario={Actual}, Account1={'Total Costs'}&gt;} Exceptions)
+Sum({&lt; FiscalMonthYear=, FiscalMonth=, FiscalQuarter=, _flag_prior_months={1}, [Measure Version]={Final},   Scenario={Actual}, Account1={'Total Costs'}&gt;} Exceptions)
 </v>
       </Definition>
       <Enable>true</Enable>
@@ -1036,7 +1036,7 @@ Sum({&lt; FiscalMonthYear=, FiscalMonth=, FiscalQuarter=, [Measure Version]={Fin
       <SortCriteria>
         <SortByState>0</SortByState>
         <SortByFrequency>0</SortByFrequency>
-        <SortByNumeric>-1</SortByNumeric>
+        <SortByNumeric>1</SortByNumeric>
         <SortByAscii>0</SortByAscii>
         <SortByLoadOrder>0</SortByLoadOrder>
         <SortByExpression>0</SortByExpression>
@@ -1182,7 +1182,9 @@ Sum({&lt; FiscalMonthYear=, FiscalMonth=, FiscalQuarter=, [Measure Version]={Fin
       <MaxStringLength>0</MaxStringLength>
       <AttributeExpressions></AttributeExpressions>
       <PageBreaks>NO_BREAKS</PageBreaks>
-      <MaxNumShown></MaxNumShown>
+      <MaxNumShown>
+        <v>24</v>
+      </MaxNumShown>
       <Spacing></Spacing>
       <ColWidth>300</ColWidth>
       <OverrideGroupSort>false</OverrideGroupSort>
@@ -1302,7 +1304,7 @@ Sum({&lt; FiscalMonthYear=, FiscalMonth=, FiscalQuarter=, [Measure Version]={Fin
     <SheetPrintDrawBackGround>false</SheetPrintDrawBackGround>
     <StrDevModeExtra></StrDevModeExtra>
   </PrintSettings>
-  <ActivePropertyPage>9</ActivePropertyPage>
+  <ActivePropertyPage>3</ActivePropertyPage>
   <DoctorSpecial>0</DoctorSpecial>
   <DoctorMapField></DoctorMapField>
   <Detached>false</Detached>
@@ -2361,12 +2363,12 @@ Sum({&lt; FiscalMonthYear=, FiscalMonth=, FiscalQuarter=, [Measure Version]={Fin
     <MinorGridStyle>2</MinorGridStyle>
     <GridThickness>3</GridThickness>
     <MinorGridThickness>1</MinorGridThickness>
-    <XAxisScroll>false</XAxisScroll>
+    <XAxisScroll>true</XAxisScroll>
     <ErrorBarWidth>ERROR_BARS_MEDIUMWIDTH</ErrorBarWidth>
     <ErrorBarThickness>ERROR_BARS_THIN</ErrorBarThickness>
     <ErrorBarColor></ErrorBarColor>
     <Offset>15</Offset>
-    <XScrollInitRight>false</XScrollInitRight>
+    <XScrollInitRight>true</XScrollInitRight>
     <BlockLevels>3</BlockLevels>
     <ShowDimValueInPopup>
       <bool>false</bool>
@@ -2990,7 +2992,7 @@ Sum({&lt; FiscalMonthYear=, FiscalMonth=, FiscalQuarter=, [Measure Version]={Fin
           <InternalId>-1</InternalId>
           <ExpressionData>
             <Definition>
-              <v>Sum({&lt; FiscalMonthYear=, FiscalMonth=, FiscalQuarter=, [Measure Version]={Final}, Scenario={Actual}, Account1={Revenue} &gt;} Amount)
+              <v>Sum({&lt; FiscalMonthYear=, FiscalMonth=, FiscalQuarter=, _flag_prior_months={1},[Measure Version]={Final}, Scenario={Actual}, Account1={Revenue} &gt;} Amount)
 
 </v>
             </Definition>
@@ -3473,11 +3475,11 @@ Sum({&lt; FiscalMonthYear=, FiscalMonth=, FiscalQuarter=, [Measure Version]={Fin
           <InternalId>-1</InternalId>
           <ExpressionData>
             <Definition>
-              <v>Sum({&lt; FiscalMonthYear=, FiscalMonth=, FiscalQuarter=, [Measure Version]={Final}, Scenario={Actual}, Account1={Revenue} &gt;} Amount)
+              <v>Sum({&lt; FiscalMonthYear=, FiscalMonth=, FiscalQuarter=, _flag_prior_months={1}, [Measure Version]={Final}, Scenario={Actual}, Account1={Revenue} &gt;} Amount)
 -
-Sum({&lt; FiscalMonthYear=, FiscalMonth=, FiscalQuarter=, [Measure Version]={Final}, Scenario={Actual}, Account1={'Total Costs'}&gt;} Amount) 
+Sum({&lt; FiscalMonthYear=, FiscalMonth=, FiscalQuarter=, _flag_prior_months={1}, [Measure Version]={Final}, Scenario={Actual}, Account1={'Total Costs'}&gt;} Amount) 
 - 
-Sum({&lt; FiscalMonthYear=, FiscalMonth=, FiscalQuarter=, [Measure Version]={Final},   Scenario={Actual}, Account1={'Total Costs'}&gt;} Exceptions)
+Sum({&lt; FiscalMonthYear=, FiscalMonth=, FiscalQuarter=, _flag_prior_months={1}, [Measure Version]={Final},   Scenario={Actual}, Account1={'Total Costs'}&gt;} Exceptions)
 </v>
             </Definition>
             <Enable>true</Enable>

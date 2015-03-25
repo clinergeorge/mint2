@@ -1,0 +1,335 @@
+﻿///$tab Main
+SET ThousandSep=',';
+SET DecimalSep='.';
+SET MoneyThousandSep=',';
+SET MoneyDecimalSep='.';
+SET MoneyFormat='$#,##0.00;($#,##0.00)';
+SET TimeFormat='h:mm:ss TT';
+SET DateFormat='M/D/YYYY';
+SET TimestampFormat='M/D/YYYY h:mm:ss[.fff] TT';
+SET MonthNames='Jan;Feb;Mar;Apr;May;Jun;Jul;Aug;Sep;Oct;Nov;Dec';
+SET DayNames='Mon;Tue;Wed;Thu;Fri;Sat;Sun';
+
+///$tab Mapping
+Map_Month:
+Mapping LOAD * Inline
+	[
+	Period., Month
+	Jan, 01
+	Feb, 02
+	Mar, 03
+	Apr, 04
+	May, 05
+	Jun, 06
+	Jul, 07
+	Aug, 08
+	Sep, 09
+	Oct, 10
+	Nov, 11
+	Dec, 12
+	]
+	;
+	
+Map_Month_2:
+Mapping LOAD * Inline
+	[
+	@4, Month
+	Jan, 01
+	Feb, 02
+	Mar, 03
+	Apr, 04
+	May, 05
+	Jun, 06
+	Jul, 07
+	Aug, 08
+	Sep, 09
+	Oct, 10
+	Nov, 11
+	Dec, 12
+	]
+	;
+	
+///$tab FY15
+SET FilePath='*.csv';
+ 
+for each File in filelist (Dir&'..\1.SourceData\FactTables\'&'$(FilePath)')
+    SET sFile = '$(File)';
+    
+1:
+LOAD 
+	 BU.								as BU_ID, 
+     Account.							as Account_ID, 
+     Date(ApplyMap('Map_Month', Period.)&'/01/'&'20'&Right([Fiscal Year.],2)) 	as MonthKey, 
+     'Actual'							as Scenario,
+     'Final'							as [Measure Version],
+     Actuals.Final						as Amount, 
+     [Actual Exceptions.Final]			as Exceptions
+FROM
+[$(sFile)]
+(txt, codepage is 1252, embedded labels, delimiter is ',', msq, filters(
+Remove(Row, Pos(Top, 9)),
+Remove(Row, Pos(Top, 8)),
+Remove(Row, Pos(Top, 7)),
+Remove(Row, Pos(Top, 6)),
+Remove(Row, Pos(Top, 5)),
+Remove(Row, Pos(Top, 4)),
+Remove(Row, Pos(Top, 3)),
+Remove(Row, Pos(Top, 2)),
+Remove(Row, Pos(Top, 1)),
+Remove(Col, Pos(Top, 13)),
+Remove(Col, Pos(Top, 12)),
+Remove(Col, Pos(Top, 11)),
+Remove(Col, Pos(Top, 10)),
+Remove(Col, Pos(Top, 9)),
+Remove(Col, Pos(Top, 8))
+));
+
+LOAD 
+	 BU.								as BU_ID, 
+     Account.							as Account_ID, 
+     Date(ApplyMap('Map_Month', Period.)&'/01/'&'20'&Right([Fiscal Year.],2)) 	as MonthKey, 
+     'Budget'							as Scenario,
+     'Final'							as [Measure Version],
+     Budget.Final						as Amount, 
+     [Budget Exceptions.Final]			as Exceptions
+FROM
+[$(sFile)]
+(txt, codepage is 1252, embedded labels, delimiter is ',', msq, filters(
+Remove(Row, Pos(Top, 9)),
+Remove(Row, Pos(Top, 8)),
+Remove(Row, Pos(Top, 7)),
+Remove(Row, Pos(Top, 6)),
+Remove(Row, Pos(Top, 5)),
+Remove(Row, Pos(Top, 4)),
+Remove(Row, Pos(Top, 3)),
+Remove(Row, Pos(Top, 2)),
+Remove(Row, Pos(Top, 1)),
+Remove(Col, Pos(Top, 13)),
+Remove(Col, Pos(Top, 12)),
+Remove(Col, Pos(Top, 11)),
+Remove(Col, Pos(Top, 10)),
+Remove(Col, Pos(Top, 7)),
+Remove(Col, Pos(Top, 6))
+));
+
+LOAD 
+	 BU.								as BU_ID, 
+     Account.							as Account_ID, 
+     Date(ApplyMap('Map_Month', Period.)&'/01/'&'20'&Right([Fiscal Year.],2)) 	as MonthKey, 
+     'LatestFcst'							as Scenario,
+     'OpCo Review'							as [Measure Version],
+     [Latest Fcst.OpCo Review]				as Amount, 
+     [Latest Fcst Exceptions.OpCo Review]	as Exceptions
+FROM
+[$(sFile)]
+(txt, codepage is 1252, embedded labels, delimiter is ',', msq, filters(
+Remove(Row, Pos(Top, 9)),
+Remove(Row, Pos(Top, 8)),
+Remove(Row, Pos(Top, 7)),
+Remove(Row, Pos(Top, 6)),
+Remove(Row, Pos(Top, 5)),
+Remove(Row, Pos(Top, 4)),
+Remove(Row, Pos(Top, 3)),
+Remove(Row, Pos(Top, 2)),
+Remove(Row, Pos(Top, 1)),
+Remove(Col, Pos(Top, 13)),
+Remove(Col, Pos(Top, 12)),
+Remove(Col, Pos(Top, 9)),
+Remove(Col, Pos(Top, 8)),
+Remove(Col, Pos(Top, 7)),
+Remove(Col, Pos(Top, 6))
+));
+
+LOAD 
+	 BU.								as BU_ID, 
+     Account.							as Account_ID, 
+     Date(ApplyMap('Map_Month', Period.)&'/01/'&'20'&Right([Fiscal Year.],2)) 	as MonthKey, 
+     'MMC'								as Scenario,
+     'Working'							as [Measure Version],
+     [MMC Working.Working]					as Amount, 
+     [MMC Working Exceptions.Working]		as Exceptions
+FROM
+[$(sFile)]
+(txt, codepage is 1252, embedded labels, delimiter is ',', msq, filters(
+Remove(Row, Pos(Top, 9)),
+Remove(Row, Pos(Top, 8)),
+Remove(Row, Pos(Top, 7)),
+Remove(Row, Pos(Top, 6)),
+Remove(Row, Pos(Top, 5)),
+Remove(Row, Pos(Top, 4)),
+Remove(Row, Pos(Top, 3)),
+Remove(Row, Pos(Top, 2)),
+Remove(Row, Pos(Top, 1)),
+Remove(Col, Pos(Top, 11)),
+Remove(Col, Pos(Top, 10)),
+Remove(Col, Pos(Top, 9)),
+Remove(Col, Pos(Top, 8)),
+Remove(Col, Pos(Top, 7)),
+Remove(Col, Pos(Top, 6))
+));
+
+next File
+
+//2:
+//NoConcatenate
+//LOAD
+//	*
+//Resident 1
+//Where MonthKey<MonthStart(Today())
+//;
+//DROP Table 1 ;
+
+STORE 1 into ..\3.QVD\Transformed\Fact_FY15.qvd (qvd) ;
+
+DROP Table 1 ;
+///$tab MMC
+1:
+LOAD 
+	 BU.								as BU_ID, 
+     Account.							as Account_ID, 
+     Date(ApplyMap('Map_Month', Period.)&'/01/'&'20'&Right([Fiscal Year.],2)) 	as MonthKey, 
+     'MMC'								as Scenario,
+     'MMC10'							as [Measure Version],
+     MMC10.MMC10						as Amount, 
+     [MMC10 Exceptions.MMC10]			as Exceptions
+FROM
+[..\1.SourceData\FactTables\archived\mmc\QV Mar Test - Corp FY15 MMC10.csv]
+(txt, codepage is 1252, embedded labels, delimiter is ',', msq, filters(
+Remove(Row, Pos(Top, 9)),
+Remove(Row, Pos(Top, 8)),
+Remove(Row, Pos(Top, 7)),
+Remove(Row, Pos(Top, 6)),
+Remove(Row, Pos(Top, 5)),
+Remove(Row, Pos(Top, 4)),
+Remove(Row, Pos(Top, 3)),
+Remove(Row, Pos(Top, 2)),
+Remove(Row, Pos(Top, 1))
+));
+
+
+LOAD 
+	 BU.								as BU_ID, 
+     Account.							as Account_ID, 
+     Date(ApplyMap('Map_Month', Period.)&'/01/'&'20'&Right([Fiscal Year.],2)) 	as MonthKey, 
+     'MMC'								as Scenario,
+     'MMC11'							as [Measure Version],
+     MMC11.MMC11						as Amount, 
+     [MMC11 Exceptions.MMC11]			as Exceptions
+FROM
+[..\1.SourceData\FactTables\archived\mmc\QV Mar Test - Corp FY15 MMC11.csv]
+(txt, codepage is 1252, embedded labels, delimiter is ',', msq, filters(
+Remove(Row, Pos(Top, 9)),
+Remove(Row, Pos(Top, 8)),
+Remove(Row, Pos(Top, 7)),
+Remove(Row, Pos(Top, 6)),
+Remove(Row, Pos(Top, 5)),
+Remove(Row, Pos(Top, 4)),
+Remove(Row, Pos(Top, 3)),
+Remove(Row, Pos(Top, 2)),
+Remove(Row, Pos(Top, 1))
+));
+
+
+LOAD 	
+	 BU.								as BU_ID, 
+     Account.							as Account_ID, 
+     Date(ApplyMap('Map_Month', Period.)&'/01/'&'20'&Right([Fiscal Year.],2)) 	as MonthKey, 
+     'MMC'								as Scenario,
+     'MMC10'							as [Measure Version],
+     MMC10.MMC10						as Amount, 
+     [MMC10 Exceptions.MMC10]			as Exceptions
+FROM
+[..\1.SourceData\FactTables\archived\mmc\QV Mar Test - ECS FY15 MMC10.csv]
+(txt, codepage is 1252, embedded labels, delimiter is ',', msq, filters(
+Remove(Row, Pos(Top, 9)),
+Remove(Row, Pos(Top, 8)),
+Remove(Row, Pos(Top, 7)),
+Remove(Row, Pos(Top, 6)),
+Remove(Row, Pos(Top, 5)),
+Remove(Row, Pos(Top, 4)),
+Remove(Row, Pos(Top, 3)),
+Remove(Row, Pos(Top, 2)),
+Remove(Row, Pos(Top, 1))
+));
+
+
+LOAD 
+	 BU.								as BU_ID, 
+     Account.							as Account_ID, 
+     Date(ApplyMap('Map_Month', Period.)&'/01/'&'20'&Right([Fiscal Year.],2)) 	as MonthKey, 
+     'MMC'								as Scenario,
+     'MMC11'							as [Measure Version],
+     MMC11.MMC11						as Amount, 
+     [MMC11 Exceptions.MMC11]			as Exceptions
+FROM
+[..\1.SourceData\FactTables\archived\mmc\QV Mar Test - ECS FY15 MMC11.csv]
+(txt, codepage is 1252, embedded labels, delimiter is ',', msq, filters(
+Remove(Row, Pos(Top, 9)),
+Remove(Row, Pos(Top, 8)),
+Remove(Row, Pos(Top, 7)),
+Remove(Row, Pos(Top, 6)),
+Remove(Row, Pos(Top, 5)),
+Remove(Row, Pos(Top, 4)),
+Remove(Row, Pos(Top, 3)),
+Remove(Row, Pos(Top, 2)),
+Remove(Row, Pos(Top, 1))
+));
+
+//2:
+//NoConcatenate
+//LOAD
+//	*
+//Resident 1
+//Where Len(Trim(Amount))>0 or Len(Trim(Exceptions))>0
+//;
+//
+//DROP Table 1 ;
+
+STORE 1 into ..\3.QVD\Transformed\Fact_FY15_MMC.qvd (qvd) ;
+
+DROP Table 1 ;
+///$tab FY 13 14 Actual
+SET FilePath='*.csv';
+ 
+for each File in filelist (Dir&'..\1.SourceData\FactTables\archived\actual\'&'$(FilePath)')
+    SET sFile = '$(File)';
+    
+1:
+LOAD 
+	 BU.								as BU_ID, 
+     Account.							as Account_ID, 
+     Date(ApplyMap('Map_Month', Period.)&'/01/'&'20'&Right([Fiscal Year.],2)) 	as MonthKey, 
+     'Actual'							as Scenario,
+     'Final'							as [Measure Version],
+     Actuals.Final						as Amount, 
+     [Actual Exceptions.Final]			as Exceptions
+FROM
+[$(sFile)]
+(txt, codepage is 1252, embedded labels, delimiter is ',', msq, filters(
+Remove(Row, Pos(Top, 9)),
+Remove(Row, Pos(Top, 8)),
+Remove(Row, Pos(Top, 7)),
+Remove(Row, Pos(Top, 6)),
+Remove(Row, Pos(Top, 5)),
+Remove(Row, Pos(Top, 4)),
+Remove(Row, Pos(Top, 3)),
+Remove(Row, Pos(Top, 2)),
+Remove(Row, Pos(Top, 1))
+));
+
+next File    
+
+//2:
+//NoConcatenate
+//LOAD
+//	*
+//Resident 1
+//Where Len(Trim(Amount))>0 or Len(Trim(Exceptions))>0
+//;
+//DROP Table 1 ;
+
+STORE 1 into ..\3.QVD\Transformed\Fact_FY1314_Actual.qvd (qvd) ;
+
+DROP Table 1 ;
+///$tab Exit Script
+Exit Script ;
